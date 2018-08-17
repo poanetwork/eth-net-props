@@ -19,4 +19,7 @@ const explorerUrlForToken = ethNetProps.explorerLinks.getExplorerTokenLinkFor(to
 //gets explorer's link to tx
 const txHash = '0x793388b1aec9a40027d7b356db6bae040edc67459e3d9569bdc78435182c6703'
 const explorerUrlForTx = ethNetProps.explorerLinks.getExplorerTxLinkFor(txHash, networkID)
+
+//gets network's display name
+const networkDisplayName = ethNetProps.props.getNetworkDisplayName(networkID)
 ```
