@@ -1,5 +1,6 @@
 function getNetworkDisplayName(network) {
-	switch (network) {
+	const netID = parseInt(network)
+	switch (netID) {
 		case 1: 
 			return 'Main Ethereum Network'
 		case 3:
