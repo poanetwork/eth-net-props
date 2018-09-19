@@ -1,6 +1,6 @@
 {
   "name": "eth-net-props",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Get properties of EMV-based network",
   "main": "index.js",
   "directories": {
@@ -20,7 +20,9 @@
   "scripts": {
     "test": "mocha"
   },
-  "keywords": ["ethereum"],
+  "keywords": [
+    "ethereum"
+  ],
   "author": "POA Network",
   "license": "ISC"
 }
