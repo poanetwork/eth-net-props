@@ -13,6 +13,8 @@ function getNetworkDisplayName(network) {
 			return 'POA Sokol Test Network'
 		case 99:
 			return 'POA Network'
+		case 100:
+			return 'Dai Chain'
 		default:
 			return 'Unknown Private Network'
 	}
