@@ -8,6 +8,7 @@ module.exports = {
 		getExplorerTokenLinkFor: getExplorerLinks.getExplorerTokenLinkFor,
 	},
 	props: {
-		getNetworkDisplayName: getNetProperties.getNetworkDisplayName
+		getNetworkDisplayName: getNetProperties.getNetworkDisplayName,
+		getNetworkCoinName: getNetProperties.getNetworkCoinName,
 	}
 }

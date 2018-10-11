@@ -105,5 +105,27 @@ describe('eth-net-props', () => {
 		it('should return correct display name for Kovan', () => {
 			assert.equal(netProps.getNetworkDisplayName(42), 'Kovan Test Network')
 		})
+
+		it('should return correct coin name for Sokol POA Network', () => {
+			assert.equal(netProps.getNetworkCoinName(77), 'POA')
+		})
+		it('should return correct coin name for Core POA Network', () => {
+			assert.equal(netProps.getNetworkCoinName(99), 'POA')
+		})
+		it('should return correct coin name for DAI chain', () => {
+			assert.equal(netProps.getNetworkCoinName(100), 'XDAI')
+		})
+		it('should return correct coin name for Mainnet', () => {
+			assert.equal(netProps.getNetworkCoinName(1), 'ETH')
+		})
+		it('should return correct coin name for Ropsten', () => {
+			assert.equal(netProps.getNetworkCoinName(3), 'ETH')
+		})
+		it('should return correct coin name for Rinkeby', () => {
+			assert.equal(netProps.getNetworkCoinName(4), 'ETH')
+		})
+		it('should return correct coin name for Kovan', () => {
+			assert.equal(netProps.getNetworkCoinName(42), 'ETH')
+		})
 	})
 })
