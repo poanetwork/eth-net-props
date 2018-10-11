@@ -51,6 +51,9 @@ function getExplorerPrefix (network) {
 		    console.warn('Do not use etherscan for POA Network')
 		    prefix = 'core'
 		    break
+		case 100: // Dai chain
+		    prefix = 'dai'
+		    break
 	    default:
 	    	prefix = ''
 	}

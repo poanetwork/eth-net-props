@@ -20,6 +20,20 @@ function getNetworkDisplayName(network) {
 	}
 }
 
+function getNetworkCoinName(network) {
+	const netID = parseInt(network)
+	switch (netID) {
+		case 77:
+		case 99:
+			return 'POA'
+		case 100:
+			return 'XDAI'
+		default:
+			return 'ETH'
+	}
+}
+
 module.exports = {
-	getNetworkDisplayName
+	getNetworkDisplayName,
+	getNetworkCoinName
 }

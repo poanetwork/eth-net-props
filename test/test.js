@@ -17,6 +17,9 @@ describe('eth-net-props', () => {
 			it('should return correct explorer link for Core POA Network', () => {
 				assert.equal(explorerLinks.getExplorerAccountLinkFor('0x15c40c6de9f2299680a4522d8635c9b394eded09', 99), 'https://blockscout.com/poa/core/address/0x15c40c6de9f2299680a4522d8635c9b394eded09')
 			})
+			it('should return correct explorer link for Dai Chain', () => {
+				assert.equal(explorerLinks.getExplorerAccountLinkFor('0x15c40c6de9f2299680a4522d8635c9b394eded09', 100), 'https://blockscout.com/poa/dai/address/0x15c40c6de9f2299680a4522d8635c9b394eded09')
+			})
 			it('should return correct explorer link for Mainnet', () => {
 				assert.equal(explorerLinks.getExplorerAccountLinkFor('0x70FDd102DDB03Dc55B1719E76DfeA784916621fd', 1), 'https://etherscan.io/address/0x70FDd102DDB03Dc55B1719E76DfeA784916621fd')
 			})
@@ -38,6 +41,9 @@ describe('eth-net-props', () => {
 			it('should return correct explorer link for Core POA Network', () => {
 				assert.equal(explorerLinks.getExplorerTxLinkFor('0xb3b01bcc1a73477cd86de989cc207fa59f87ea601dea298772f4b1b3f6f1407e', 99), 'https://blockscout.com/poa/core/tx/0xb3b01bcc1a73477cd86de989cc207fa59f87ea601dea298772f4b1b3f6f1407e')
 			})
+			it('should return correct explorer link for Dai Chain', () => {
+				assert.equal(explorerLinks.getExplorerTxLinkFor('0xb3b01bcc1a73477cd86de989cc207fa59f87ea601dea298772f4b1b3f6f1407e', 100), 'https://blockscout.com/poa/dai/tx/0xb3b01bcc1a73477cd86de989cc207fa59f87ea601dea298772f4b1b3f6f1407e')
+			})
 			it('should return correct explorer link for Mainnet', () => {
 				assert.equal(explorerLinks.getExplorerTxLinkFor('0x892c825d1ec25b0a1a27aa5dff5b54fc4488a45029d0087fc40d3d733ded7305', 1), 'https://etherscan.io/tx/0x892c825d1ec25b0a1a27aa5dff5b54fc4488a45029d0087fc40d3d733ded7305')
 			})
@@ -58,6 +64,9 @@ describe('eth-net-props', () => {
 			})
 			it('should return correct explorer link for Core POA Network', () => {
 				assert.equal(explorerLinks.getExplorerTokenLinkFor('0xcf2AEDCfb4ff2c9020fb61c41226A4DfD77D12dE', '0x70FDd102DDB03Dc55B1719E76DfeA784916621fd', 99), 'https://blockscout.com/poa/core/address/0xcf2AEDCfb4ff2c9020fb61c41226A4DfD77D12dE')
+			})
+			it('should return correct explorer link for Dai Chain', () => {
+				assert.equal(explorerLinks.getExplorerTokenLinkFor('0xcf2AEDCfb4ff2c9020fb61c41226A4DfD77D12dE', '0x70FDd102DDB03Dc55B1719E76DfeA784916621fd', 100), 'https://blockscout.com/poa/dai/address/0xcf2AEDCfb4ff2c9020fb61c41226A4DfD77D12dE')
 			})
 			it('should return correct explorer link for Mainnet', () => {
 				assert.equal(explorerLinks.getExplorerTokenLinkFor('0xcf2AEDCfb4ff2c9020fb61c41226A4DfD77D12dE', '0x70FDd102DDB03Dc55B1719E76DfeA784916621fd', 1), 'https://etherscan.io/token/0xcf2AEDCfb4ff2c9020fb61c41226A4DfD77D12dE?a=0x70FDd102DDB03Dc55B1719E76DfeA784916621fd')
@@ -95,6 +104,28 @@ describe('eth-net-props', () => {
 		})
 		it('should return correct display name for Kovan', () => {
 			assert.equal(netProps.getNetworkDisplayName(42), 'Kovan Test Network')
+		})
+
+		it('should return correct coin name for Sokol POA Network', () => {
+			assert.equal(netProps.getNetworkCoinName(77), 'POA')
+		})
+		it('should return correct coin name for Core POA Network', () => {
+			assert.equal(netProps.getNetworkCoinName(99), 'POA')
+		})
+		it('should return correct coin name for DAI chain', () => {
+			assert.equal(netProps.getNetworkCoinName(100), 'XDAI')
+		})
+		it('should return correct coin name for Mainnet', () => {
+			assert.equal(netProps.getNetworkCoinName(1), 'ETH')
+		})
+		it('should return correct coin name for Ropsten', () => {
+			assert.equal(netProps.getNetworkCoinName(3), 'ETH')
+		})
+		it('should return correct coin name for Rinkeby', () => {
+			assert.equal(netProps.getNetworkCoinName(4), 'ETH')
+		})
+		it('should return correct coin name for Kovan', () => {
+			assert.equal(netProps.getNetworkCoinName(42), 'ETH')
 		})
 	})
 })
