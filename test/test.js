@@ -81,6 +81,9 @@ describe('eth-net-props', () => {
 		it('should return correct display name for Core POA Network', () => {
 			assert.equal(netProps.getNetworkDisplayName(99), 'POA Network')
 		})
+		it('should return correct display name for DAI chain', () => {
+			assert.equal(netProps.getNetworkDisplayName(100), 'Dai Chain')
+		})
 		it('should return correct display name for Mainnet', () => {
 			assert.equal(netProps.getNetworkDisplayName(1), 'Main Ethereum Network')
 		})

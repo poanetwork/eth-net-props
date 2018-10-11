@@ -1,6 +1,6 @@
 const getExplorerAccountLinkFor = (account, network) => {
     const prefix = getExplorerPrefix(network)
-	const POAnetwokIDs = [77, 99]
+	const POAnetwokIDs = [77, 99, 100]
 	if (POAnetwokIDs.includes(parseInt(network))) {
     	return `https://blockscout.com/poa/${prefix}/address/${account}`
     } else {
@@ -10,7 +10,7 @@ const getExplorerAccountLinkFor = (account, network) => {
 
 const getExplorerTxLinkFor = (hash, network) => {
 	const prefix = getExplorerPrefix(network)
-	const POAnetwokIDs = [77, 99]
+	const POAnetwokIDs = [77, 99, 100]
      if (POAnetwokIDs.includes(parseInt(network))) {
     	return `https://blockscout.com/poa/${prefix}/tx/${hash}`
     } else {
@@ -20,7 +20,7 @@ const getExplorerTxLinkFor = (hash, network) => {
 
 const getExplorerTokenLinkFor = (tokenAddress, account, network) => {
 	const prefix = getExplorerPrefix(network)
-	const POAnetwokIDs = [77, 99]
+	const POAnetwokIDs = [77, 99, 100]
 	if (POAnetwokIDs.includes(parseInt(network))) {
 		return `https://blockscout.com/poa/${prefix}/address/${tokenAddress}`
 	} else {
