@@ -113,7 +113,7 @@ describe('eth-net-props', () => {
 			assert.equal(netProps.getNetworkCoinName(99), 'POA')
 		})
 		it('should return correct coin name for DAI chain', () => {
-			assert.equal(netProps.getNetworkCoinName(100), 'XDAI')
+			assert.equal(netProps.getNetworkCoinName(100), 'xDAI')
 		})
 		it('should return correct coin name for Mainnet', () => {
 			assert.equal(netProps.getNetworkCoinName(1), 'ETH')
