@@ -27,7 +27,7 @@ function getNetworkCoinName(network) {
 		case 99:
 			return 'POA'
 		case 100:
-			return 'XDAI'
+			return 'xDAI'
 		default:
 			return 'ETH'
 	}
