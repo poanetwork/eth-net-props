@@ -14,7 +14,7 @@ function getNetworkDisplayName(network) {
 		case 99:
 			return 'POA Network'
 		case 100:
-			return 'Dai Chain'
+			return 'xDai Chain'
 		default:
 			return 'Unknown Private Network'
 	}
