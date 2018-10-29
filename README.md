@@ -20,6 +20,15 @@ const explorerUrlForToken = ethNetProps.explorerLinks.getExplorerTokenLinkFor(to
 const txHash = '0x793388b1aec9a40027d7b356db6bae040edc67459e3d9569bdc78435182c6703'
 const explorerUrlForTx = ethNetProps.explorerLinks.getExplorerTxLinkFor(txHash, networkID)
 
+//gets array of faucets' links
+const faucetLinks = ethNetProps.faucetLinks(networkID)
+
+//gets array of RPC edpoints
+const faucetLinks = ethNetProps.RPCEndpoints(networkID)
+
 //gets network's display name
 const networkDisplayName = ethNetProps.props.getNetworkDisplayName(networkID)
+
+//check, if chain is a testnet
+const isTestnet = ethNetProps.props.isTestnet(networkID)
 ```
