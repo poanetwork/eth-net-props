@@ -1,4 +1,9 @@
 # eth-net-props
+
+[![Build Status](https://travis-ci.org/poanetwork/eth-net-props.svg?branch=master)](https://travis-ci.org/poanetwork/eth-net-props)
+[![Known Vulnerabilities](https://snyk.io/test/github/poanetwork/eth-net-props/badge.svg)](https://snyk.io/test/github/poanetwork/eth-net-props)
+[![Coverage Status](https://coveralls.io/repos/github/poanetwork/eth-net-props/badge.svg?branch=master)](https://coveralls.io/github/poanetwork/eth-net-props?branch=master)
+
 Get properties of EVM compatible networks
 
 Example of usage:
