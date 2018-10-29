@@ -24,7 +24,7 @@ const explorerUrlForTx = ethNetProps.explorerLinks.getExplorerTxLinkFor(txHash, 
 const faucetLinks = ethNetProps.faucetLinks(networkID)
 
 //gets array of RPC edpoints
-const faucetLinks = ethNetProps.RPCEndpoints(networkID)
+const RPCEndpoints = ethNetProps.RPCEndpoints(networkID)
 
 //gets network's display name
 const networkDisplayName = ethNetProps.props.getNetworkDisplayName(networkID)
