@@ -122,7 +122,7 @@ describe('eth-net-props', () => {
 		})
 	})
 
-	clainPrefix = 'should return correct RPC endpoint for'
+	claimPrefix = 'should return correct RPC endpoint for'
 	describe('get RPC endpoints', () => {
 		it(`${claimPrefix} Sokol POA Network`, () => {
 			const sokolRPCEndpoints = RPCEndpoints.getRPCEndpoints(77)
@@ -223,25 +223,25 @@ describe('eth-net-props', () => {
 			assert.equal(netProps.getNetworkCoinName(42), 'ETH')
 		})
 
-		it(`Sokol POA Network is a testnet`, () => {
+		it('Sokol POA Network is a testnet', () => {
 			assert.equal(netProps.isTestnet(77), true)
 		})
-		it(`Core POA Network is not a testnet`, () => {
+		it('Core POA Network is not a testnet', () => {
 			assert.equal(netProps.isTestnet(99), false)
 		})
-		it(`DAI chain is not a testnet`, () => {
+		it('DAI chain is not a testnet', () => {
 			assert.equal(netProps.isTestnet(100), false)
 		})
-		it(`Mainnet is not a testnet`, () => {
+		it('Mainnet is not a testnet', () => {
 			assert.equal(netProps.isTestnet(1), false)
 		})
-		it(`Ropsten is a testnet`, () => {
+		it('Ropsten is a testnet', () => {
 			assert.equal(netProps.isTestnet(3), true)
 		})
-		it(`Rinkeby is a testnet`, () => {
+		it('Rinkeby is a testnet', () => {
 			assert.equal(netProps.isTestnet(4), true)
 		})
-		it(`Kovan is a testnet`, () => {
+		it('Kovan is a testnet', () => {
 			assert.equal(netProps.isTestnet(42), true)
 		})
 	})

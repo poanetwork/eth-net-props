@@ -1,6 +1,6 @@
 {
   "name": "eth-net-props",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Get properties of EMV-based network",
   "main": "index.js",
   "directories": {
@@ -10,7 +10,11 @@
     "chai": "^4.1.2"
   },
   "devDependencies": {
-    "mocha": "^5.2.0"
+    "coveralls": "^3.0.2",
+    "eslint": "^5.8.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^5.2.0",
+    "mocha-lcov-reporter": "^1.3.0"
   },
   "homepage": "https://github.com/poanetwork/eth-net-props#readme",
   "repository": {
@@ -18,7 +22,9 @@
     "url": "git+https://github.com/poanetwork/eth-net-props.git"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "lint": "./node_modules/.bin/eslint .",
+    "coveralls": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "keywords": [
     "ethereum"
