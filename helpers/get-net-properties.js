@@ -33,7 +33,20 @@ function getNetworkCoinName(network) {
 	}
 }
 
+function isTestnet(network) {
+	const netID = parseInt(network)
+	switch (netID) {
+		case 1:
+		case 99:
+		case 100:
+			return false
+		default:
+			return true
+	}
+}
+
 module.exports = {
 	getNetworkDisplayName,
-	getNetworkCoinName
+	getNetworkCoinName,
+	isTestnet
 }
