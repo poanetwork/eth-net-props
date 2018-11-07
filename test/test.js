@@ -94,10 +94,9 @@ describe('eth-net-props', () => {
 		})
 		it(`${claimPrefix} Ropsten Network`, () => {
 			const ropstenFaucetLinks = faucetLinks.getFaucetLinks(3)
-			assert.equal(ropstenFaucetLinks.length, 2)
+			assert.equal(ropstenFaucetLinks.length, 1)
 			if (ropstenFaucetLinks.length > 0) {
-				assert.equal(ropstenFaucetLinks[0], 'https://faucet.ropsten.be/')
-				assert.equal(ropstenFaucetLinks[1], 'https://faucet.metamask.io/')
+				assert.equal(ropstenFaucetLinks[0], 'https://faucet.metamask.io/')
 			}
 		})
 		it(`${claimPrefix} Rinkeby Network`, () => {
