@@ -2,7 +2,7 @@ function getFaucetLinks(network) {
 	const netID = parseInt(network)
 	switch (netID) {
 	case 3:
-		return ['https://faucet.ropsten.be/', 'https://faucet.metamask.io/']
+		return ['https://faucet.metamask.io/']
 	case 4:
 		return ['https://faucet.rinkeby.io/']
 	case 42:

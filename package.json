@@ -1,6 +1,6 @@
 {
   "name": "eth-net-props",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Get properties of EMV-based network",
   "main": "index.js",
   "directories": {
