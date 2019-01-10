@@ -15,6 +15,10 @@ function getNetworkDisplayName(network) {
 		return 'POA Network'
 	case 100:
 		return 'xDai Chain'
+	case 30:
+		return 'RSK Mainnet'
+	case 31:
+		return 'RSK Testnet'
 	default:
 		return 'Unknown Private Network'
 	}
@@ -26,6 +30,9 @@ function getNetworkCoinName(network) {
 	case 77:
 	case 99:
 		return 'POA'
+	case 30:
+	case 31:
+		return 'RBTC'
 	case 100:
 		return 'xDAI'
 	default:
@@ -39,6 +46,7 @@ function isTestnet(network) {
 	case 1:
 	case 99:
 	case 100:
+	case 30:
 		return false
 	default:
 		return true
