@@ -32,6 +32,9 @@ describe('eth-net-props', () => {
 			it(`${claimPrefix} Kovan`, () => {
 				assert.equal(explorerLinks.getExplorerAccountLinkFor('0x70FDd102DDB03Dc55B1719E76DfeA784916621fd', 42), 'https://kovan.etherscan.io/address/0x70FDd102DDB03Dc55B1719E76DfeA784916621fd')
 			})
+			it(`${claimPrefix} RSK Mainnet`, () => {
+				assert.equal(explorerLinks.getExplorerAccountLinkFor('0x70FDd102DDB03Dc55B1719E76DfeA784916621fd', 30), 'https://explorer.rsk.co/address/0x70FDd102DDB03Dc55B1719E76DfeA784916621fd')
+			})
 		})
 
 		describe ('getExplorerTxLinkFor()', () => {
@@ -56,6 +59,9 @@ describe('eth-net-props', () => {
 			it(`${claimPrefix} Kovan`, () => {
 				assert.equal(explorerLinks.getExplorerTxLinkFor('0x892c825d1ec25b0a1a27aa5dff5b54fc4488a45029d0087fc40d3d733ded7305', 42), 'https://kovan.etherscan.io/tx/0x892c825d1ec25b0a1a27aa5dff5b54fc4488a45029d0087fc40d3d733ded7305')
 			})
+			it(`${claimPrefix} RSK Mainnet`, () => {
+				assert.equal(explorerLinks.getExplorerTxLinkFor('0x33a7511c7838f5be0ade40d732f0a51cd28c8a641de9079836170cbdac8e7d83', 30), 'https://explorer.rsk.co/tx/0x33a7511c7838f5be0ade40d732f0a51cd28c8a641de9079836170cbdac8e7d83')
+			})
 		})
 
 		describe ('getExplorerTokenLinkFor()', () => {
@@ -79,6 +85,9 @@ describe('eth-net-props', () => {
 			})
 			it(`${claimPrefix} Kovan`, () => {
 				assert.equal(explorerLinks.getExplorerTokenLinkFor('0xcf2AEDCfb4ff2c9020fb61c41226A4DfD77D12dE', '0x70FDd102DDB03Dc55B1719E76DfeA784916621fd', 42), 'https://kovan.etherscan.io/token/0xcf2AEDCfb4ff2c9020fb61c41226A4DfD77D12dE?a=0x70FDd102DDB03Dc55B1719E76DfeA784916621fd')
+			})
+			it(`${claimPrefix} RSK Mainnet`, () => {
+				assert.equal(explorerLinks.getExplorerTokenLinkFor('0x16cb2604ce5951c8506fbf690d816be6d0aa00fb', '0x604056c0f88aed17ef975269aab1ae9d02840bb2', 30), 'https://explorer.rsk.co/token/0x16cb2604ce5951c8506fbf690d816be6d0aa00fb/account/0x604056c0f88aed17ef975269aab1ae9d02840bb2')
 			})
 		})
 	})
@@ -114,10 +123,18 @@ describe('eth-net-props', () => {
 				assert.equal(kovanFaucetLinks[1], 'https://gitter.im/kovan-testnet/faucet/')
 			}
 		})
+		it(`${claimPrefix} RSK Testnet`, () => {
+			const RSKFaucetLinks = faucetLinks.getFaucetLinks(31)
+			assert.equal(RSKFaucetLinks.length, 1)
+			if (RSKFaucetLinks.length > 0) {
+				assert.equal(RSKFaucetLinks[0], 'https://faucet.testnet.rsk.co/')
+			}
+		})
 		it('should not return faucet link for production blockchains', () => {
 			assert.equal(faucetLinks.getFaucetLinks(1).length, 0)
 			assert.equal(faucetLinks.getFaucetLinks(99).length, 0)
 			assert.equal(faucetLinks.getFaucetLinks(100).length, 0)
+			assert.equal(faucetLinks.getFaucetLinks(30).length, 0)
 		})
 	})
 
@@ -160,10 +177,9 @@ describe('eth-net-props', () => {
 		})
 		it(`${claimPrefix} Core POA Network`, () => {
 			const POARPCEndpoints = RPCEndpoints.getRPCEndpoints(99)
-			assert.equal(POARPCEndpoints.length, 2)
+			assert.equal(POARPCEndpoints.length, 1)
 			if (POARPCEndpoints.length > 0) {
-				assert.equal(POARPCEndpoints[0], 'https://poa.infura.io/')
-				assert.equal(POARPCEndpoints[1], 'https://core.poa.network/')
+				assert.equal(POARPCEndpoints[0], 'https://core.poa.network/')
 			}
 		})
 		it(`${claimPrefix} xDai chain`, () => {
@@ -171,6 +187,20 @@ describe('eth-net-props', () => {
 			assert.equal(xDaiRPCEndpoints.length, 1)
 			if (xDaiRPCEndpoints.length > 0) {
 				assert.equal(xDaiRPCEndpoints[0], 'https://dai.poa.network/')
+			}
+		})
+		it(`${claimPrefix} RSK Mainnet`, () => {
+			const RSKRPCEndpoints = RPCEndpoints.getRPCEndpoints(30)
+			assert.equal(RSKRPCEndpoints.length, 1)
+			if (RSKRPCEndpoints.length > 0) {
+				assert.equal(RSKRPCEndpoints[0], 'https://public-node.rsk.co')
+			}
+		})
+		it(`${claimPrefix} RSK TestNet`, () => {
+			const RSKRPCEndpoints = RPCEndpoints.getRPCEndpoints(31)
+			assert.equal(RSKRPCEndpoints.length, 1)
+			if (RSKRPCEndpoints.length > 0) {
+				assert.equal(RSKRPCEndpoints[0], 'https://public-node.testnet.rsk.co')
 			}
 		})
 	})
@@ -189,6 +219,9 @@ describe('eth-net-props', () => {
 		it(`${claimPrefix} Mainnet`, () => {
 			assert.equal(netProps.getNetworkDisplayName(1), 'Main Ethereum Network')
 		})
+		it(`${claimPrefix} RSK Mainnet`, () => {
+			assert.equal(netProps.getNetworkDisplayName(30), 'RSK Mainnet')
+		})
 		it(`${claimPrefix} Ropsten`, () => {
 			assert.equal(netProps.getNetworkDisplayName(3), 'Ropsten Test Network')
 		})
@@ -197,6 +230,9 @@ describe('eth-net-props', () => {
 		})
 		it(`${claimPrefix} Kovan`, () => {
 			assert.equal(netProps.getNetworkDisplayName(42), 'Kovan Test Network')
+		})
+		it(`${claimPrefix} RSK Testnet`, () => {
+			assert.equal(netProps.getNetworkDisplayName(31), 'RSK Testnet')
 		})
 
 		claimPrefix = 'should return correct coin name for'
@@ -212,6 +248,9 @@ describe('eth-net-props', () => {
 		it(`${claimPrefix} Mainnet`, () => {
 			assert.equal(netProps.getNetworkCoinName(1), 'ETH')
 		})
+		it(`${claimPrefix} RSK Mainnet`, () => {
+			assert.equal(netProps.getNetworkCoinName(30), 'RBTC')
+		})
 		it(`${claimPrefix} Ropsten`, () => {
 			assert.equal(netProps.getNetworkCoinName(3), 'ETH')
 		})
@@ -220,6 +259,9 @@ describe('eth-net-props', () => {
 		})
 		it(`${claimPrefix} Kovan`, () => {
 			assert.equal(netProps.getNetworkCoinName(42), 'ETH')
+		})
+		it(`${claimPrefix} RSK Testnet`, () => {
+			assert.equal(netProps.getNetworkCoinName(31), 'RBTC')
 		})
 
 		it('Sokol POA Network is a testnet', () => {
@@ -234,6 +276,9 @@ describe('eth-net-props', () => {
 		it('Mainnet is not a testnet', () => {
 			assert.equal(netProps.isTestnet(1), false)
 		})
+		it('RSK Mainnet is not a testnet', () => {
+			assert.equal(netProps.isTestnet(30), false)
+		})
 		it('Ropsten is a testnet', () => {
 			assert.equal(netProps.isTestnet(3), true)
 		})
@@ -242,6 +287,9 @@ describe('eth-net-props', () => {
 		})
 		it('Kovan is a testnet', () => {
 			assert.equal(netProps.isTestnet(42), true)
+		})
+		it('RSK Testnet is a testnet', () => {
+			assert.equal(netProps.isTestnet(31), true)
 		})
 	})
 })

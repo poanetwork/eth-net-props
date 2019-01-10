@@ -12,9 +12,13 @@ function getRPCEndpoints(network) {
 	case 77:
 		return ['https://sokol.poa.network/']
 	case 99:
-		return ['https://poa.infura.io/', 'https://core.poa.network/']
+		return ['https://core.poa.network/']
 	case 100:
 		return ['https://dai.poa.network/']
+	case 30:
+		return ['https://public-node.rsk.co']
+	case 31:
+		return ['https://public-node.testnet.rsk.co']
 	default:
 		return []
 	}

@@ -9,6 +9,8 @@ function getFaucetLinks(network) {
 		return ['https://faucet.kovan.network/', 'https://gitter.im/kovan-testnet/faucet/']
 	case 77:
 		return ['https://faucet.poa.network/']
+	case 31:
+		return ['https://faucet.testnet.rsk.co/']
 	default:
 		return []
 	}
