@@ -28,7 +28,7 @@ const getExplorerTokenLinkFor = (tokenAddress, account, network) => {
 	if (POAIDs.includes(parseInt(network))) {
 		return `https://blockscout.com/poa/${prefix}/address/${tokenAddress}`
 	} else if (RSKIDs.includes(parseInt(network))) {
-		return `https://explorer.rsk.co/token/${tokenAddress}/account/${account}` 
+		return `https://explorer.rsk.co/token/${tokenAddress}/account/${account}`
 	} else {
 		return `https://${prefix}etherscan.io/token/${tokenAddress}?a=${account}`
 	}
