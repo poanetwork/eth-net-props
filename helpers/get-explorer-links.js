@@ -9,7 +9,6 @@ const {
 	POA_CORE_CODE,
 	XDAI_CODE,
 	RSK_CODE,
-	RSK_TESTNET_CODE,
 } = networkIDs
 
 const POA_IDs = [SOKOL_CODE, POA_CORE_CODE, XDAI_CODE]
