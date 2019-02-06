@@ -258,7 +258,7 @@ describe('eth-net-props', () => {
 			assert.equal(netProps.getNetworkDisplayName(31), 'RSK Testnet')
 		})
 		it(`${claimPrefix} Goerli Testnet`, () => {
-			assert.equal(netProps.getNetworkDisplayName(5), 'Goerli Test Network')
+			assert.equal(netProps.getNetworkDisplayName(5), 'Görli Test Network')
 		})
 
 		claimPrefix = 'should return correct coin name for'
