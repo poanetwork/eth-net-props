@@ -35,6 +35,9 @@ describe('eth-net-props', () => {
 			it(`${claimPrefix} RSK Mainnet`, () => {
 				assert.equal(explorerLinks.getExplorerAccountLinkFor('0x70FDd102DDB03Dc55B1719E76DfeA784916621fd', 30), 'https://explorer.rsk.co/address/0x70FDd102DDB03Dc55B1719E76DfeA784916621fd')
 			})
+			it(`${claimPrefix} Goerli Testnet`, () => {
+				assert.equal(explorerLinks.getExplorerAccountLinkFor('0xd8fe15886d2dcbc5d7c06394beb417aadaf1eee0', 5), 'https://blockscout.com/eth/goerli/address/0xd8fe15886d2dcbc5d7c06394beb417aadaf1eee0')
+			})
 		})
 
 		describe ('getExplorerTxLinkFor()', () => {
@@ -62,6 +65,9 @@ describe('eth-net-props', () => {
 			it(`${claimPrefix} RSK Mainnet`, () => {
 				assert.equal(explorerLinks.getExplorerTxLinkFor('0x33a7511c7838f5be0ade40d732f0a51cd28c8a641de9079836170cbdac8e7d83', 30), 'https://explorer.rsk.co/tx/0x33a7511c7838f5be0ade40d732f0a51cd28c8a641de9079836170cbdac8e7d83')
 			})
+			it(`${claimPrefix} Goerli Testnet`, () => {
+				assert.equal(explorerLinks.getExplorerTxLinkFor('0xb9599801c83e6aa20769e7dcdce0989c7380ba78cb587d3d7db11e1b30b17b54', 5), 'https://blockscout.com/eth/goerli/tx/0xb9599801c83e6aa20769e7dcdce0989c7380ba78cb587d3d7db11e1b30b17b54')
+			})
 		})
 
 		describe ('getExplorerTokenLinkFor()', () => {
@@ -88,6 +94,9 @@ describe('eth-net-props', () => {
 			})
 			it(`${claimPrefix} RSK Mainnet`, () => {
 				assert.equal(explorerLinks.getExplorerTokenLinkFor('0x16cb2604ce5951c8506fbf690d816be6d0aa00fb', '0x604056c0f88aed17ef975269aab1ae9d02840bb2', 30), 'https://explorer.rsk.co/token/0x16cb2604ce5951c8506fbf690d816be6d0aa00fb/account/0x604056c0f88aed17ef975269aab1ae9d02840bb2')
+			})
+			it(`${claimPrefix} Goerli testnet`, () => {
+				assert.equal(explorerLinks.getExplorerTokenLinkFor('0xd8fe15886d2dcbc5d7c06394beb417aadaf1eee0', '0x604056c0f88aed17ef975269aab1ae9d02840bb2', 5), 'https://blockscout.com/eth/goerli/address/0xd8fe15886d2dcbc5d7c06394beb417aadaf1eee0')
 			})
 		})
 	})
@@ -128,6 +137,13 @@ describe('eth-net-props', () => {
 			assert.equal(RSKFaucetLinks.length, 1)
 			if (RSKFaucetLinks.length > 0) {
 				assert.equal(RSKFaucetLinks[0], 'https://faucet.testnet.rsk.co/')
+			}
+		})
+		it(`${claimPrefix} Goerli Network`, () => {
+			const goerliFaucetLinks = faucetLinks.getFaucetLinks(5)
+			assert.equal(goerliFaucetLinks.length, 1)
+			if (goerliFaucetLinks.length > 0) {
+				assert.equal(goerliFaucetLinks[0], 'https://goerli-faucet.slock.it/')
 			}
 		})
 		it('should not return faucet link for production blockchains', () => {
@@ -203,6 +219,13 @@ describe('eth-net-props', () => {
 				assert.equal(RSKRPCEndpoints[0], 'https://public-node.testnet.rsk.co')
 			}
 		})
+		it(`${claimPrefix} Goerli testnet`, () => {
+			const GoerliRPCEndpoints = RPCEndpoints.getRPCEndpoints(5)
+			assert.equal(GoerliRPCEndpoints.length, 1)
+			if (GoerliRPCEndpoints.length > 0) {
+				assert.equal(GoerliRPCEndpoints[0], 'https://goerli.blockscout.com/')
+			}
+		})
 	})
 
 	claimPrefix = 'should return correct display name for'
@@ -234,6 +257,9 @@ describe('eth-net-props', () => {
 		it(`${claimPrefix} RSK Testnet`, () => {
 			assert.equal(netProps.getNetworkDisplayName(31), 'RSK Testnet')
 		})
+		it(`${claimPrefix} Goerli Testnet`, () => {
+			assert.equal(netProps.getNetworkDisplayName(5), 'Goerli Test Network')
+		})
 
 		claimPrefix = 'should return correct coin name for'
 		it(`${claimPrefix} Sokol POA Network`, () => {
@@ -263,6 +289,9 @@ describe('eth-net-props', () => {
 		it(`${claimPrefix} RSK Testnet`, () => {
 			assert.equal(netProps.getNetworkCoinName(31), 'RBTC')
 		})
+		it(`${claimPrefix} Goerli Testnet`, () => {
+			assert.equal(netProps.getNetworkCoinName(5), 'GöETH')
+		})
 
 		it('Sokol POA Network is a testnet', () => {
 			assert.equal(netProps.isTestnet(77), true)
@@ -290,6 +319,9 @@ describe('eth-net-props', () => {
 		})
 		it('RSK Testnet is a testnet', () => {
 			assert.equal(netProps.isTestnet(31), true)
+		})
+		it('Goerli Testnet is a testnet', () => {
+			assert.equal(netProps.isTestnet(5), true)
 		})
 	})
 })

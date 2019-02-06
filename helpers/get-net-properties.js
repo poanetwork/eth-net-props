@@ -1,23 +1,39 @@
+const { networkIDs } = require('./enum')
+const {
+	MAINNET_CODE,
+	ROPSTEN_CODE,
+	RINKEBY_CODE,
+	GOERLI_CODE,
+	KOVAN_CODE,
+	SOKOL_CODE,
+	POA_CORE_CODE,
+	XDAI_CODE,
+	RSK_CODE,
+	RSK_TESTNET_CODE,
+} = networkIDs
+
 function getNetworkDisplayName(network) {
 	const netID = parseInt(network)
 	switch (netID) {
-	case 1:
+	case MAINNET_CODE:
 		return 'Main Ethereum Network'
-	case 3:
+	case ROPSTEN_CODE:
 		return 'Ropsten Test Network'
-	case 4:
+	case RINKEBY_CODE:
 		return 'Rinkeby Test Network'
-	case 42:
+	case GOERLI_CODE:
+		return 'Goerli Test Network'
+	case KOVAN_CODE:
 		return 'Kovan Test Network'
-	case 77:
+	case SOKOL_CODE:
 		return 'POA Sokol Test Network'
-	case 99:
+	case POA_CORE_CODE:
 		return 'POA Network'
-	case 100:
+	case XDAI_CODE:
 		return 'xDai Chain'
-	case 30:
+	case RSK_CODE:
 		return 'RSK Mainnet'
-	case 31:
+	case RSK_TESTNET_CODE:
 		return 'RSK Testnet'
 	default:
 		return 'Unknown Private Network'
@@ -27,14 +43,16 @@ function getNetworkDisplayName(network) {
 function getNetworkCoinName(network) {
 	const netID = parseInt(network)
 	switch (netID) {
-	case 77:
-	case 99:
+	case SOKOL_CODE:
+	case POA_CORE_CODE:
 		return 'POA'
-	case 30:
-	case 31:
+	case RSK_CODE:
+	case RSK_TESTNET_CODE:
 		return 'RBTC'
-	case 100:
+	case XDAI_CODE:
 		return 'xDAI'
+	case GOERLI_CODE:
+		return 'GöETH'
 	default:
 		return 'ETH'
 	}
@@ -43,10 +61,10 @@ function getNetworkCoinName(network) {
 function isTestnet(network) {
 	const netID = parseInt(network)
 	switch (netID) {
-	case 1:
-	case 99:
-	case 100:
-	case 30:
+	case MAINNET_CODE:
+	case POA_CORE_CODE:
+	case XDAI_CODE:
+	case RSK_CODE:
 		return false
 	default:
 		return true
