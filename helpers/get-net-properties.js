@@ -22,7 +22,7 @@ function getNetworkDisplayName(network) {
 	case RINKEBY_CODE:
 		return 'Rinkeby Test Network'
 	case GOERLI_CODE:
-		return 'Goerli Test Network'
+		return 'Görli Test Network'
 	case KOVAN_CODE:
 		return 'Kovan Test Network'
 	case SOKOL_CODE:
