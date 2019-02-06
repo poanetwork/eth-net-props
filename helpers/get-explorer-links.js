@@ -1,36 +1,60 @@
-const POAIDs = [77, 99, 100]
-const RSKIDs = [30]
+const { networkIDs } = require('./enum')
+const {
+	MAINNET_CODE,
+	ROPSTEN_CODE,
+	RINKEBY_CODE,
+	GOERLI_CODE,
+	KOVAN_CODE,
+	SOKOL_CODE,
+	POA_CORE_CODE,
+	XDAI_CODE,
+	RSK_CODE,
+} = networkIDs
+
+const POA_IDs = [SOKOL_CODE, POA_CORE_CODE, XDAI_CODE]
+const RSK_IDs = [RSK_CODE]
+const ETH_IDs = [GOERLI_CODE]
+
+const blockScoutLink = (net, prefix) => `https://blockscout.com/${net}/${prefix}`
+const etherscanLink = (prefix) => `https://${prefix}etherscan.io`
+const rskExplorerLink = 'https://explorer.rsk.co'
 
 const getExplorerAccountLinkFor = (account, network) => {
 	const prefix = getExplorerPrefix(network)
-	if (POAIDs.includes(parseInt(network))) {
-		return `https://blockscout.com/poa/${prefix}/address/${account}`
-	} else if (RSKIDs.includes(parseInt(network))) {
-		return `https://explorer.rsk.co/address/${account}`
+	if (POA_IDs.includes(parseInt(network))) {
+		return `${blockScoutLink('poa', prefix)}/address/${account}`
+	} else if (ETH_IDs.includes(parseInt(network))) {
+		return `${blockScoutLink('eth', prefix)}/address/${account}`
+	} else if (RSK_IDs.includes(parseInt(network))) {
+		return `${rskExplorerLink}/address/${account}`
 	} else {
-		return `https://${prefix}etherscan.io/address/${account}`
+		return `${etherscanLink(prefix)}/address/${account}`
 	}
 }
 
 const getExplorerTxLinkFor = (hash, network) => {
 	const prefix = getExplorerPrefix(network)
-	if (POAIDs.includes(parseInt(network))) {
-		return `https://blockscout.com/poa/${prefix}/tx/${hash}`
-	} else if (RSKIDs.includes(parseInt(network))) {
-		return `https://explorer.rsk.co/tx/${hash}`
+	if (POA_IDs.includes(parseInt(network))) {
+		return `${blockScoutLink('poa', prefix)}/tx/${hash}`
+	} else if (ETH_IDs.includes(parseInt(network))) {
+		return `${blockScoutLink('eth', prefix)}/tx/${hash}`
+	} else if (RSK_IDs.includes(parseInt(network))) {
+		return `${rskExplorerLink}/tx/${hash}`
 	} else {
-		return `https://${prefix}etherscan.io/tx/${hash}`
+		return `${etherscanLink(prefix)}/tx/${hash}`
 	}
 }
 
 const getExplorerTokenLinkFor = (tokenAddress, account, network) => {
 	const prefix = getExplorerPrefix(network)
-	if (POAIDs.includes(parseInt(network))) {
-		return `https://blockscout.com/poa/${prefix}/address/${tokenAddress}`
-	} else if (RSKIDs.includes(parseInt(network))) {
-		return `https://explorer.rsk.co/token/${tokenAddress}/account/${account}`
+	if (POA_IDs.includes(parseInt(network))) {
+		return `${blockScoutLink('poa', prefix)}/address/${tokenAddress}`
+	} else if (ETH_IDs.includes(parseInt(network))) {
+		return `${blockScoutLink('eth', prefix)}/address/${tokenAddress}`
+	} else if (RSK_IDs.includes(parseInt(network))) {
+		return `${rskExplorerLink}/token/${tokenAddress}/account/${account}`
 	} else {
-		return `https://${prefix}etherscan.io/token/${tokenAddress}?a=${account}`
+		return `${etherscanLink(prefix)}/token/${tokenAddress}?a=${account}`
 	}
 }
 
@@ -38,26 +62,29 @@ function getExplorerPrefix (network) {
 	const net = parseInt(network)
 	let prefix
 	switch (net) {
-	case 1: // main net
+	case MAINNET_CODE: // main net
 		prefix = ''
 		break
-	case 3: // ropsten test net
+	case ROPSTEN_CODE: // ropsten test net
 		prefix = 'ropsten.'
 		break
-	case 4: // rinkeby test net
+	case RINKEBY_CODE: // rinkeby test net
 		prefix = 'rinkeby.'
 		break
-	case 42: // kovan test net
+	case KOVAN_CODE: // kovan test net
 		prefix = 'kovan.'
 		break
-	case 77: // POA Sokol test net
+	case SOKOL_CODE: // POA Sokol test net
 		prefix = 'sokol'
 		break
-	case 99: // POA Core net
+	case POA_CORE_CODE: // POA Core net
 		prefix = 'core'
 		break
-	case 100: // Dai chain
+	case XDAI_CODE: // Dai chain
 		prefix = 'dai'
+		break
+	case GOERLI_CODE: // Goerli testnet
+		prefix = 'goerli'
 		break
 	default:
 		prefix = ''

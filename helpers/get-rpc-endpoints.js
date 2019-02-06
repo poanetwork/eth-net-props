@@ -1,23 +1,39 @@
+const { networkIDs } = require('./enum')
+const {
+	MAINNET_CODE,
+	ROPSTEN_CODE,
+	RINKEBY_CODE,
+	GOERLI_CODE,
+	KOVAN_CODE,
+	SOKOL_CODE,
+	POA_CORE_CODE,
+	XDAI_CODE,
+	RSK_CODE,
+	RSK_TESTNET_CODE,
+} = networkIDs
+
 function getRPCEndpoints(network) {
 	const netID = parseInt(network)
 	switch (netID) {
-	case 1:
+	case MAINNET_CODE:
 		return ['https://mainnet.infura.io/']
-	case 3:
+	case ROPSTEN_CODE:
 		return ['https://ropsten.infura.io/']
-	case 4:
+	case RINKEBY_CODE:
 		return ['https://rinkeby.infura.io/']
-	case 42:
+	case GOERLI_CODE:
+		return ['https://goerli.blockscout.com/']
+	case KOVAN_CODE:
 		return ['https://kovan.infura.io/']
-	case 77:
+	case SOKOL_CODE:
 		return ['https://sokol.poa.network/']
-	case 99:
+	case POA_CORE_CODE:
 		return ['https://core.poa.network/']
-	case 100:
+	case XDAI_CODE:
 		return ['https://dai.poa.network/']
-	case 30:
+	case RSK_CODE:
 		return ['https://public-node.rsk.co']
-	case 31:
+	case RSK_TESTNET_CODE:
 		return ['https://public-node.testnet.rsk.co']
 	default:
 		return []
