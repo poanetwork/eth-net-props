@@ -231,7 +231,7 @@ describe('eth-net-props', () => {
 	claimPrefix = 'should return correct display name for'
 	describe('get network properties', () => {
 		it(`${claimPrefix} Sokol POA Network`, () => {
-			assert.equal(netProps.getNetworkDisplayName(77), 'POA Sokol Test Network')
+			assert.equal(netProps.getNetworkDisplayName(77), 'Sokol Test Network')
 		})
 		it(`${claimPrefix} Core POA Network`, () => {
 			assert.equal(netProps.getNetworkDisplayName(99), 'POA Network')
