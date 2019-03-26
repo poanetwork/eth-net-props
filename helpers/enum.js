@@ -1,6 +1,6 @@
 const networkIDs = {
 	MAINNET_CODE: 1,
-	CLASSIC_CODE: "1'",
+	CLASSIC_CODE: '1\'',
 	ROPSTEN_CODE: 3,
 	RINKEBY_CODE: 4,
 	GOERLI_CODE: 5,
