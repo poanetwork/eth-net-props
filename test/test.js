@@ -38,6 +38,9 @@ describe('eth-net-props', () => {
 			it(`${claimPrefix} Goerli Testnet`, () => {
 				assert.equal(explorerLinks.getExplorerAccountLinkFor('0xd8fe15886d2dcbc5d7c06394beb417aadaf1eee0', 5), 'https://blockscout.com/eth/goerli/address/0xd8fe15886d2dcbc5d7c06394beb417aadaf1eee0')
 			})
+			it(`${claimPrefix} Ethereum Classic`, () => {
+				assert.equal(explorerLinks.getExplorerAccountLinkFor('0xd8fe15886d2dcbc5d7c06394beb417aadaf1eee0', "1'"), 'https://blockscout.com/etc/mainnet/address/0xd8fe15886d2dcbc5d7c06394beb417aadaf1eee0')
+			})
 		})
 
 		describe ('getExplorerTxLinkFor()', () => {
@@ -68,17 +71,20 @@ describe('eth-net-props', () => {
 			it(`${claimPrefix} Goerli Testnet`, () => {
 				assert.equal(explorerLinks.getExplorerTxLinkFor('0xb9599801c83e6aa20769e7dcdce0989c7380ba78cb587d3d7db11e1b30b17b54', 5), 'https://blockscout.com/eth/goerli/tx/0xb9599801c83e6aa20769e7dcdce0989c7380ba78cb587d3d7db11e1b30b17b54')
 			})
+			it(`${claimPrefix} Ethereum Classic`, () => {
+				assert.equal(explorerLinks.getExplorerTxLinkFor('0x430c90335b32fdcd92e54991668023d58b72bce836e204a81c6d97506c7137e5', "1'"), 'https://blockscout.com/etc/mainnet/tx/0x430c90335b32fdcd92e54991668023d58b72bce836e204a81c6d97506c7137e5')
+			})
 		})
 
 		describe ('getExplorerTokenLinkFor()', () => {
 			it(`${claimPrefix} Sokol POA Network`, () => {
-				assert.equal(explorerLinks.getExplorerTokenLinkFor('0xcf2AEDCfb4ff2c9020fb61c41226A4DfD77D12dE', '0x70FDd102DDB03Dc55B1719E76DfeA784916621fd', 77), 'https://blockscout.com/poa/sokol/address/0xcf2AEDCfb4ff2c9020fb61c41226A4DfD77D12dE')
+				assert.equal(explorerLinks.getExplorerTokenLinkFor('0xcf2AEDCfb4ff2c9020fb61c41226A4DfD77D12dE', '0x70FDd102DDB03Dc55B1719E76DfeA784916621fd', 77), 'https://blockscout.com/poa/sokol/tokens/0xcf2AEDCfb4ff2c9020fb61c41226A4DfD77D12dE')
 			})
 			it(`${claimPrefix} Core POA Network`, () => {
-				assert.equal(explorerLinks.getExplorerTokenLinkFor('0xcf2AEDCfb4ff2c9020fb61c41226A4DfD77D12dE', '0x70FDd102DDB03Dc55B1719E76DfeA784916621fd', 99), 'https://blockscout.com/poa/core/address/0xcf2AEDCfb4ff2c9020fb61c41226A4DfD77D12dE')
+				assert.equal(explorerLinks.getExplorerTokenLinkFor('0xcf2AEDCfb4ff2c9020fb61c41226A4DfD77D12dE', '0x70FDd102DDB03Dc55B1719E76DfeA784916621fd', 99), 'https://blockscout.com/poa/core/tokens/0xcf2AEDCfb4ff2c9020fb61c41226A4DfD77D12dE')
 			})
 			it(`${claimPrefix} Dai Chain`, () => {
-				assert.equal(explorerLinks.getExplorerTokenLinkFor('0xcf2AEDCfb4ff2c9020fb61c41226A4DfD77D12dE', '0x70FDd102DDB03Dc55B1719E76DfeA784916621fd', 100), 'https://blockscout.com/poa/dai/address/0xcf2AEDCfb4ff2c9020fb61c41226A4DfD77D12dE')
+				assert.equal(explorerLinks.getExplorerTokenLinkFor('0xabe71e6a260c2eea3c30864dc50639100aa315f6', '0x70FDd102DDB03Dc55B1719E76DfeA784916621fd', 100), 'https://blockscout.com/poa/dai/tokens/0xabe71e6a260c2eea3c30864dc50639100aa315f6')
 			})
 			it(`${claimPrefix} Mainnet`, () => {
 				assert.equal(explorerLinks.getExplorerTokenLinkFor('0xcf2AEDCfb4ff2c9020fb61c41226A4DfD77D12dE', '0x70FDd102DDB03Dc55B1719E76DfeA784916621fd', 1), 'https://etherscan.io/token/0xcf2AEDCfb4ff2c9020fb61c41226A4DfD77D12dE?a=0x70FDd102DDB03Dc55B1719E76DfeA784916621fd')
@@ -96,7 +102,10 @@ describe('eth-net-props', () => {
 				assert.equal(explorerLinks.getExplorerTokenLinkFor('0x16cb2604ce5951c8506fbf690d816be6d0aa00fb', '0x604056c0f88aed17ef975269aab1ae9d02840bb2', 30), 'https://explorer.rsk.co/token/0x16cb2604ce5951c8506fbf690d816be6d0aa00fb/account/0x604056c0f88aed17ef975269aab1ae9d02840bb2')
 			})
 			it(`${claimPrefix} Goerli testnet`, () => {
-				assert.equal(explorerLinks.getExplorerTokenLinkFor('0xd8fe15886d2dcbc5d7c06394beb417aadaf1eee0', '0x604056c0f88aed17ef975269aab1ae9d02840bb2', 5), 'https://blockscout.com/eth/goerli/address/0xd8fe15886d2dcbc5d7c06394beb417aadaf1eee0')
+				assert.equal(explorerLinks.getExplorerTokenLinkFor('0x7af963cf6d228e564e2a0aa0ddbf06210b38615d', '0x604056c0f88aed17ef975269aab1ae9d02840bb2', 5), 'https://blockscout.com/eth/goerli/tokens/0x7af963cf6d228e564e2a0aa0ddbf06210b38615d')
+			})
+			it(`${claimPrefix} Ethereum Classic`, () => {
+				assert.equal(explorerLinks.getExplorerTokenLinkFor('0x1ac1c8b874c7b889113a036ba443b082554be5d0', '0x604056c0f88aed17ef975269aab1ae9d02840bb2', "1'"), 'https://blockscout.com/etc/mainnet/tokens/0x1ac1c8b874c7b889113a036ba443b082554be5d0')
 			})
 		})
 	})
@@ -226,6 +235,13 @@ describe('eth-net-props', () => {
 				assert.equal(GoerliRPCEndpoints[0], 'https://goerli.blockscout.com/')
 			}
 		})
+		it(`${claimPrefix} Ethereum Classic`, () => {
+			const ETCRPCEndpoints = RPCEndpoints.getRPCEndpoints("1'")
+			assert.equal(ETCRPCEndpoints.length, 1)
+			if (ETCRPCEndpoints.length > 0) {
+				assert.equal(ETCRPCEndpoints[0], 'https://ethereumclassic.network/')
+			}
+		})
 	})
 
 	claimPrefix = 'should return correct display name for'
@@ -260,6 +276,9 @@ describe('eth-net-props', () => {
 		it(`${claimPrefix} Goerli Testnet`, () => {
 			assert.equal(netProps.getNetworkDisplayName(5), 'Görli Test Network')
 		})
+		it(`${claimPrefix} Ethereum Classic`, () => {
+			assert.equal(netProps.getNetworkDisplayName("1'"), 'Ethereum Classic')
+		})
 
 		claimPrefix = 'should return correct coin name for'
 		it(`${claimPrefix} Sokol POA Network`, () => {
@@ -292,6 +311,9 @@ describe('eth-net-props', () => {
 		it(`${claimPrefix} Goerli Testnet`, () => {
 			assert.equal(netProps.getNetworkCoinName(5), 'GöETH')
 		})
+		it(`${claimPrefix} Ethereum Classic`, () => {
+			assert.equal(netProps.getNetworkCoinName("1'"), 'ETC')
+		})
 
 		it('Sokol POA Network is a testnet', () => {
 			assert.equal(netProps.isTestnet(77), true)
@@ -322,6 +344,9 @@ describe('eth-net-props', () => {
 		})
 		it('Goerli Testnet is a testnet', () => {
 			assert.equal(netProps.isTestnet(5), true)
+		})
+		it('Ethereum Classic is not a testnet', () => {
+			assert.equal(netProps.isTestnet("1'"), false)
 		})
 	})
 })
