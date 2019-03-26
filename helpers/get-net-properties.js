@@ -15,7 +15,7 @@ const {
 } = networkIDs
 
 function getNetworkDisplayName(network) {
-	const netID = isClassic ? network : parseInt(network)
+	const netID = isClassic(network) ? network : parseInt(network)
 	switch (netID) {
 	case MAINNET_CODE:
 		return 'Main Ethereum Network'
