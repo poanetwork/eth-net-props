@@ -1,4 +1,5 @@
 const { networkIDs } = require('./enum')
+const { isClassic } = require('./helper')
 const {
 	MAINNET_CODE,
 	ROPSTEN_CODE,
@@ -10,10 +11,11 @@ const {
 	XDAI_CODE,
 	RSK_CODE,
 	RSK_TESTNET_CODE,
+	CLASSIC_CODE,
 } = networkIDs
 
 function getNetworkDisplayName(network) {
-	const netID = parseInt(network)
+	const netID = isClassic ? network : parseInt(network)
 	switch (netID) {
 	case MAINNET_CODE:
 		return 'Main Ethereum Network'
@@ -35,13 +37,15 @@ function getNetworkDisplayName(network) {
 		return 'RSK Mainnet'
 	case RSK_TESTNET_CODE:
 		return 'RSK Testnet'
+	case CLASSIC_CODE:
+		return 'Ethereum Classic'
 	default:
 		return 'Unknown Private Network'
 	}
 }
 
 function getNetworkCoinName(network) {
-	const netID = parseInt(network)
+	const netID = isClassic ? network : parseInt(network)
 	switch (netID) {
 	case SOKOL_CODE:
 	case POA_CORE_CODE:
@@ -53,6 +57,8 @@ function getNetworkCoinName(network) {
 		return 'xDAI'
 	case GOERLI_CODE:
 		return 'GöETH'
+	case CLASSIC_CODE:
+		return 'ETC'
 	default:
 		return 'ETH'
 	}
@@ -65,6 +71,7 @@ function isTestnet(network) {
 	case POA_CORE_CODE:
 	case XDAI_CODE:
 	case RSK_CODE:
+	case CLASSIC_CODE:
 		return false
 	default:
 		return true

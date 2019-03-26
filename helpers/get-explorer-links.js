@@ -1,4 +1,5 @@
 const { networkIDs } = require('./enum')
+const { isClassic } = require('./helper')
 const {
 	MAINNET_CODE,
 	ROPSTEN_CODE,
@@ -9,6 +10,7 @@ const {
 	POA_CORE_CODE,
 	XDAI_CODE,
 	RSK_CODE,
+	CLASSIC_CODE,
 } = networkIDs
 
 const POA_IDs = [SOKOL_CODE, POA_CORE_CODE, XDAI_CODE]
@@ -23,6 +25,8 @@ const getExplorerAccountLinkFor = (account, network) => {
 	const prefix = getExplorerPrefix(network)
 	if (POA_IDs.includes(parseInt(network))) {
 		return `${blockScoutLink('poa', prefix)}/address/${account}`
+	} else if (network === CLASSIC_CODE) {
+		return `${blockScoutLink('etc', prefix)}/address/${account}`
 	} else if (ETH_IDs.includes(parseInt(network))) {
 		return `${blockScoutLink('eth', prefix)}/address/${account}`
 	} else if (RSK_IDs.includes(parseInt(network))) {
@@ -36,6 +40,8 @@ const getExplorerTxLinkFor = (hash, network) => {
 	const prefix = getExplorerPrefix(network)
 	if (POA_IDs.includes(parseInt(network))) {
 		return `${blockScoutLink('poa', prefix)}/tx/${hash}`
+	} else if (network === CLASSIC_CODE) {
+		return `${blockScoutLink('etc', prefix)}/tx/${hash}`
 	} else if (ETH_IDs.includes(parseInt(network))) {
 		return `${blockScoutLink('eth', prefix)}/tx/${hash}`
 	} else if (RSK_IDs.includes(parseInt(network))) {
@@ -48,9 +54,11 @@ const getExplorerTxLinkFor = (hash, network) => {
 const getExplorerTokenLinkFor = (tokenAddress, account, network) => {
 	const prefix = getExplorerPrefix(network)
 	if (POA_IDs.includes(parseInt(network))) {
-		return `${blockScoutLink('poa', prefix)}/address/${tokenAddress}`
+		return `${blockScoutLink('poa', prefix)}/tokens/${tokenAddress}`
+	} else if (network === CLASSIC_CODE) {
+		return `${blockScoutLink('etc', prefix)}/tokens/${tokenAddress}`
 	} else if (ETH_IDs.includes(parseInt(network))) {
-		return `${blockScoutLink('eth', prefix)}/address/${tokenAddress}`
+		return `${blockScoutLink('eth', prefix)}/tokens/${tokenAddress}`
 	} else if (RSK_IDs.includes(parseInt(network))) {
 		return `${rskExplorerLink}/token/${tokenAddress}/account/${account}`
 	} else {
@@ -59,7 +67,7 @@ const getExplorerTokenLinkFor = (tokenAddress, account, network) => {
 }
 
 function getExplorerPrefix (network) {
-	const net = parseInt(network)
+	const net = isClassic ? network : parseInt(network)
 	let prefix
 	switch (net) {
 	case MAINNET_CODE: // main net
@@ -85,6 +93,9 @@ function getExplorerPrefix (network) {
 		break
 	case GOERLI_CODE: // Goerli testnet
 		prefix = 'goerli'
+		break
+	case CLASSIC_CODE: // Goerli testnet
+		prefix = 'mainnet'
 		break
 	default:
 		prefix = ''

@@ -1,4 +1,5 @@
 const { networkIDs } = require('./enum')
+const { isClassic } = require('./helper')
 const {
 	MAINNET_CODE,
 	ROPSTEN_CODE,
@@ -10,10 +11,11 @@ const {
 	XDAI_CODE,
 	RSK_CODE,
 	RSK_TESTNET_CODE,
+	CLASSIC_CODE,
 } = networkIDs
 
 function getRPCEndpoints(network) {
-	const netID = parseInt(network)
+	const netID = isClassic ? network : parseInt(network)
 	switch (netID) {
 	case MAINNET_CODE:
 		return ['https://mainnet.infura.io/']
@@ -35,6 +37,8 @@ function getRPCEndpoints(network) {
 		return ['https://public-node.rsk.co']
 	case RSK_TESTNET_CODE:
 		return ['https://public-node.testnet.rsk.co']
+	case CLASSIC_CODE:
+		return ['https://ethereumclassic.network/']
 	default:
 		return []
 	}
