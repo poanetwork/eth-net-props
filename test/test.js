@@ -279,6 +279,9 @@ describe('eth-net-props', () => {
 		it(`${claimPrefix} Ethereum Classic`, () => {
 			assert.equal(netProps.getNetworkDisplayName('1\''), 'Ethereum Classic')
 		})
+		it(`${claimPrefix} Sokol POA Network`, () => {
+			assert.equal(netProps.getNetworkDisplayName('77'), 'Sokol Test Network')
+		})
 
 		claimPrefix = 'should return correct coin name for'
 		it(`${claimPrefix} Sokol POA Network`, () => {
