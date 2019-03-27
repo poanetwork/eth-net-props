@@ -1,5 +1,4 @@
 const { networkIDs } = require('./enum')
-const { isClassic } = require('./helper')
 const {
 	MAINNET_CODE,
 	ROPSTEN_CODE,
@@ -15,7 +14,7 @@ const {
 } = networkIDs
 
 function getNetworkDisplayName(network) {
-	const netID = isClassic(network) ? network : parseInt(network)
+	const netID = parseInt(network)
 	switch (netID) {
 	case MAINNET_CODE:
 		return 'Main Ethereum Network'
@@ -45,7 +44,7 @@ function getNetworkDisplayName(network) {
 }
 
 function getNetworkCoinName(network) {
-	const netID = isClassic ? network : parseInt(network)
+	const netID = parseInt(network)
 	switch (netID) {
 	case SOKOL_CODE:
 	case POA_CORE_CODE:

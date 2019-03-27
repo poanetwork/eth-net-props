@@ -1,5 +1,4 @@
 const { networkIDs } = require('./enum')
-const { isClassic } = require('./helper')
 const {
 	MAINNET_CODE,
 	ROPSTEN_CODE,
@@ -67,7 +66,7 @@ const getExplorerTokenLinkFor = (tokenAddress, account, network) => {
 }
 
 function getExplorerPrefix (network) {
-	const net = isClassic ? network : parseInt(network)
+	const net = parseInt(network)
 	let prefix
 	switch (net) {
 	case MAINNET_CODE: // main net
