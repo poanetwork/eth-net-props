@@ -38,7 +38,7 @@ function getRPCEndpoints(network) {
 	case RSK_TESTNET_CODE:
 		return ['https://public-node.testnet.rsk.co']
 	case CLASSIC_CODE:
-		return ['https://ethereumclassic.network/']
+		return ['https://etc-parity.0xinfra.com']
 	default:
 		return []
 	}
