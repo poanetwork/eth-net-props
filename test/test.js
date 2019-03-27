@@ -41,6 +41,9 @@ describe('eth-net-props', () => {
 			it(`${claimPrefix} Ethereum Classic`, () => {
 				assert.equal(explorerLinks.getExplorerAccountLinkFor('0xd8fe15886d2dcbc5d7c06394beb417aadaf1eee0', 61), 'https://blockscout.com/etc/mainnet/address/0xd8fe15886d2dcbc5d7c06394beb417aadaf1eee0')
 			})
+			it(`${claimPrefix} Ethereum Classic`, () => {
+				assert.equal(explorerLinks.getExplorerAccountLinkFor('0xd8fe15886d2dcbc5d7c06394beb417aadaf1eee0', '61'), 'https://blockscout.com/etc/mainnet/address/0xd8fe15886d2dcbc5d7c06394beb417aadaf1eee0')
+			})
 		})
 
 		describe ('getExplorerTxLinkFor()', () => {

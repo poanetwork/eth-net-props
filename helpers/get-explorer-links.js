@@ -24,7 +24,7 @@ const getExplorerAccountLinkFor = (account, network) => {
 	const prefix = getExplorerPrefix(network)
 	if (POA_IDs.includes(parseInt(network))) {
 		return `${blockScoutLink('poa', prefix)}/address/${account}`
-	} else if (network === CLASSIC_CODE) {
+	} else if (parseInt(network) === CLASSIC_CODE) {
 		return `${blockScoutLink('etc', prefix)}/address/${account}`
 	} else if (ETH_IDs.includes(parseInt(network))) {
 		return `${blockScoutLink('eth', prefix)}/address/${account}`
@@ -39,7 +39,7 @@ const getExplorerTxLinkFor = (hash, network) => {
 	const prefix = getExplorerPrefix(network)
 	if (POA_IDs.includes(parseInt(network))) {
 		return `${blockScoutLink('poa', prefix)}/tx/${hash}`
-	} else if (network === CLASSIC_CODE) {
+	} else if (parseInt(network) === CLASSIC_CODE) {
 		return `${blockScoutLink('etc', prefix)}/tx/${hash}`
 	} else if (ETH_IDs.includes(parseInt(network))) {
 		return `${blockScoutLink('eth', prefix)}/tx/${hash}`
@@ -54,7 +54,7 @@ const getExplorerTokenLinkFor = (tokenAddress, account, network) => {
 	const prefix = getExplorerPrefix(network)
 	if (POA_IDs.includes(parseInt(network))) {
 		return `${blockScoutLink('poa', prefix)}/tokens/${tokenAddress}`
-	} else if (network === CLASSIC_CODE) {
+	} else if (parseInt(network) === CLASSIC_CODE) {
 		return `${blockScoutLink('etc', prefix)}/tokens/${tokenAddress}`
 	} else if (ETH_IDs.includes(parseInt(network))) {
 		return `${blockScoutLink('eth', prefix)}/tokens/${tokenAddress}`
