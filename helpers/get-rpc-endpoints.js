@@ -1,5 +1,4 @@
 const { networkIDs } = require('./enum')
-const { isClassic } = require('./helper')
 const {
 	MAINNET_CODE,
 	ROPSTEN_CODE,
@@ -15,7 +14,7 @@ const {
 } = networkIDs
 
 function getRPCEndpoints(network) {
-	const netID = isClassic ? network : parseInt(network)
+	const netID = parseInt(network)
 	switch (netID) {
 	case MAINNET_CODE:
 		return ['https://mainnet.infura.io/']
