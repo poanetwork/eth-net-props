@@ -239,7 +239,7 @@ describe('eth-net-props', () => {
 			const ETCRPCEndpoints = RPCEndpoints.getRPCEndpoints('1\'')
 			assert.equal(ETCRPCEndpoints.length, 1)
 			if (ETCRPCEndpoints.length > 0) {
-				assert.equal(ETCRPCEndpoints[0], 'https://ethereumclassic.network/')
+				assert.equal(ETCRPCEndpoints[0], 'https://etc-parity.0xinfra.com')
 			}
 		})
 	})
