@@ -242,7 +242,7 @@ describe('eth-net-props', () => {
 			const ETCRPCEndpoints = RPCEndpoints.getRPCEndpoints(61)
 			assert.equal(ETCRPCEndpoints.length, 1)
 			if (ETCRPCEndpoints.length > 0) {
-				assert.equal(ETCRPCEndpoints[0], 'https://etc-parity.0xinfra.com')
+				assert.equal(ETCRPCEndpoints[0], 'https://classic.blockscout.com/')
 			}
 		})
 	})
