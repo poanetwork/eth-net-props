@@ -12,57 +12,52 @@ const {
 	CLASSIC_CODE,
 } = networkIDs
 
-const POA_IDs = [SOKOL_CODE, POA_CORE_CODE, XDAI_CODE]
-const RSK_IDs = [RSK_CODE]
-const ETH_IDs = [GOERLI_CODE]
-
 const blockScoutLink = (net, prefix) => `https://blockscout.com/${net}/${prefix}`
-const etherscanLink = (prefix) => `https://${prefix}etherscan.io`
-const rskExplorerLink = 'https://explorer.rsk.co'
 
 const getExplorerAccountLinkFor = (account, network) => {
 	const prefix = getExplorerPrefix(network)
-	if (POA_IDs.includes(parseInt(network))) {
-		return `${blockScoutLink('poa', prefix)}/address/${account}`
-	} else if (parseInt(network) === CLASSIC_CODE) {
-		return `${blockScoutLink('etc', prefix)}/address/${account}`
-	} else if (ETH_IDs.includes(parseInt(network))) {
-		return `${blockScoutLink('eth', prefix)}/address/${account}`
-	} else if (RSK_IDs.includes(parseInt(network))) {
-		return `${rskExplorerLink}/address/${account}`
-	} else {
-		return `${etherscanLink(prefix)}/address/${account}`
-	}
+	const chain = getExplorerChain(network)
+	return `${blockScoutLink(chain, prefix)}/address/${account}`
 }
 
 const getExplorerTxLinkFor = (hash, network) => {
 	const prefix = getExplorerPrefix(network)
-	if (POA_IDs.includes(parseInt(network))) {
-		return `${blockScoutLink('poa', prefix)}/tx/${hash}`
-	} else if (parseInt(network) === CLASSIC_CODE) {
-		return `${blockScoutLink('etc', prefix)}/tx/${hash}`
-	} else if (ETH_IDs.includes(parseInt(network))) {
-		return `${blockScoutLink('eth', prefix)}/tx/${hash}`
-	} else if (RSK_IDs.includes(parseInt(network))) {
-		return `${rskExplorerLink}/tx/${hash}`
-	} else {
-		return `${etherscanLink(prefix)}/tx/${hash}`
-	}
+	const chain = getExplorerChain(network)
+	return `${blockScoutLink(chain, prefix)}/tx/${hash}`
 }
 
 const getExplorerTokenLinkFor = (tokenAddress, account, network) => {
 	const prefix = getExplorerPrefix(network)
-	if (POA_IDs.includes(parseInt(network))) {
-		return `${blockScoutLink('poa', prefix)}/tokens/${tokenAddress}`
-	} else if (parseInt(network) === CLASSIC_CODE) {
-		return `${blockScoutLink('etc', prefix)}/tokens/${tokenAddress}`
-	} else if (ETH_IDs.includes(parseInt(network))) {
-		return `${blockScoutLink('eth', prefix)}/tokens/${tokenAddress}`
-	} else if (RSK_IDs.includes(parseInt(network))) {
-		return `${rskExplorerLink}/token/${tokenAddress}/account/${account}`
-	} else {
-		return `${etherscanLink(prefix)}/token/${tokenAddress}?a=${account}`
+	const chain = getExplorerChain(network)
+	return `${blockScoutLink(chain, prefix)}/tokens/${tokenAddress}`
+}
+
+function getExplorerChain (network) {
+	const net = parseInt(network)
+	let chain
+	switch (net) {
+	case MAINNET_CODE: // main net
+	case ROPSTEN_CODE: // ropsten testnet
+	case RINKEBY_CODE: // rinkeby testnet
+	case KOVAN_CODE: // kovan testnet
+	case GOERLI_CODE: // Goerli testnet
+		chain = 'eth'
+		break
+	case SOKOL_CODE: // POA Sokol testnet
+	case POA_CORE_CODE: // POA Core
+	case XDAI_CODE: // xDai chain
+		chain = 'poa'
+		break
+	case CLASSIC_CODE: // ETC
+		chain = 'etc'
+		break
+	case RSK_CODE: // RSK mainnet
+		chain = 'rsk'
+		break
+	default:
+		chain = ''
 	}
+	return chain
 }
 
 function getExplorerPrefix (network) {
@@ -70,31 +65,30 @@ function getExplorerPrefix (network) {
 	let prefix
 	switch (net) {
 	case MAINNET_CODE: // main net
-		prefix = ''
+	case CLASSIC_CODE: // ETC
+	case RSK_CODE: // RSK mainnet
+		prefix = 'mainnet'
 		break
-	case ROPSTEN_CODE: // ropsten test net
-		prefix = 'ropsten.'
+	case ROPSTEN_CODE: // ropsten testnet
+		prefix = 'ropsten'
 		break
-	case RINKEBY_CODE: // rinkeby test net
-		prefix = 'rinkeby.'
+	case RINKEBY_CODE: // rinkeby testnet
+		prefix = 'rinkeby'
 		break
-	case KOVAN_CODE: // kovan test net
-		prefix = 'kovan.'
+	case KOVAN_CODE: // kovan testnet
+		prefix = 'kovan'
 		break
-	case SOKOL_CODE: // POA Sokol test net
+	case SOKOL_CODE: // POA Sokol testnet
 		prefix = 'sokol'
 		break
-	case POA_CORE_CODE: // POA Core net
+	case POA_CORE_CODE: // POA Core
 		prefix = 'core'
 		break
-	case XDAI_CODE: // Dai chain
+	case XDAI_CODE: // xDai chain
 		prefix = 'dai'
 		break
 	case GOERLI_CODE: // Goerli testnet
 		prefix = 'goerli'
-		break
-	case CLASSIC_CODE: // Goerli testnet
-		prefix = 'mainnet'
 		break
 	default:
 		prefix = ''
