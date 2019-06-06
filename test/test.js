@@ -253,7 +253,7 @@ describe('eth-net-props', () => {
 			assert.equal(netProps.getNetworkDisplayName(77), 'Sokol Test Network')
 		})
 		it(`${claimPrefix} Core POA Network`, () => {
-			assert.equal(netProps.getNetworkDisplayName(99), 'POA Network')
+			assert.equal(netProps.getNetworkDisplayName(99), 'POA Core')
 		})
 		it(`${claimPrefix} DAI chain`, () => {
 			assert.equal(netProps.getNetworkDisplayName(100), 'xDai Chain')
