@@ -23,7 +23,7 @@ function getRPCEndpoints(network) {
 	case RINKEBY_CODE:
 		return ['https://rinkeby.infura.io/']
 	case GOERLI_CODE:
-		return ['https://goerli.blockscout.com/']
+		return ['https://rpc.slock.it/goerli/']
 	case KOVAN_CODE:
 		return ['https://kovan.infura.io/']
 	case SOKOL_CODE:

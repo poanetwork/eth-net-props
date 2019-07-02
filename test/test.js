@@ -235,7 +235,7 @@ describe('eth-net-props', () => {
 			const GoerliRPCEndpoints = RPCEndpoints.getRPCEndpoints(5)
 			assert.equal(GoerliRPCEndpoints.length, 1)
 			if (GoerliRPCEndpoints.length > 0) {
-				assert.equal(GoerliRPCEndpoints[0], 'https://goerli.blockscout.com/')
+				assert.equal(GoerliRPCEndpoints[0], 'https://rpc.slock.it/goerli/')
 			}
 		})
 		it(`${claimPrefix} Ethereum Classic`, () => {
