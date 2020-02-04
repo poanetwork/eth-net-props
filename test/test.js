@@ -242,7 +242,7 @@ describe('eth-net-props', () => {
 			const ETCRPCEndpoints = RPCEndpoints.getRPCEndpoints(61)
 			assert.equal(ETCRPCEndpoints.length, 1)
 			if (ETCRPCEndpoints.length > 0) {
-				assert.equal(ETCRPCEndpoints[0], 'https://www.ethercluster.com/etc/')
+				assert.equal(ETCRPCEndpoints[0], 'https://www.ethercluster.com/etc')
 			}
 		})
 	})
