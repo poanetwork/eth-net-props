@@ -37,7 +37,7 @@ function getRPCEndpoints(network) {
 	case RSK_TESTNET_CODE:
 		return ['https://public-node.testnet.rsk.co']
 	case CLASSIC_CODE:
-		return ['https://classic.blockscout.com/']
+		return ['https://www.ethercluster.com/etc/']
 	default:
 		return []
 	}
