@@ -18,25 +18,25 @@ describe('eth-net-props', () => {
 				assert.equal(explorerLinks.getExplorerAccountLinkFor('0x15c40c6de9f2299680a4522d8635c9b394eded09', 99), 'https://blockscout.com/poa/core/address/0x15c40c6de9f2299680a4522d8635c9b394eded09')
 			})
 			it(`${claimPrefix} Dai Chain`, () => {
-				assert.equal(explorerLinks.getExplorerAccountLinkFor('0x15c40c6de9f2299680a4522d8635c9b394eded09', 100), 'https://blockscout.com/poa/dai/address/0x15c40c6de9f2299680a4522d8635c9b394eded09')
+				assert.equal(explorerLinks.getExplorerAccountLinkFor('0x15c40c6de9f2299680a4522d8635c9b394eded09', 100), 'https://blockscout.com/poa/xdai/address/0x15c40c6de9f2299680a4522d8635c9b394eded09')
 			})
 			it(`${claimPrefix} Mainnet`, () => {
 				assert.equal(explorerLinks.getExplorerAccountLinkFor('0x70FDd102DDB03Dc55B1719E76DfeA784916621fd', 1), 'https://blockscout.com/eth/mainnet/address/0x70FDd102DDB03Dc55B1719E76DfeA784916621fd')
 			})
 			it(`${claimPrefix} Ropsten`, () => {
-				assert.equal(explorerLinks.getExplorerAccountLinkFor('0x70FDd102DDB03Dc55B1719E76DfeA784916621fd', 3), 'https://blockscout.com/eth/ropsten/address/0x70FDd102DDB03Dc55B1719E76DfeA784916621fd')
+				assert.equal(explorerLinks.getExplorerAccountLinkFor('0x70FDd102DDB03Dc55B1719E76DfeA784916621fd', 3), 'https://ropsten.etherscan.io/address/0x70FDd102DDB03Dc55B1719E76DfeA784916621fd')
 			})
 			it(`${claimPrefix} Rinkeby`, () => {
-				assert.equal(explorerLinks.getExplorerAccountLinkFor('0x70FDd102DDB03Dc55B1719E76DfeA784916621fd', 4), 'https://blockscout.com/eth/rinkeby/address/0x70FDd102DDB03Dc55B1719E76DfeA784916621fd')
+				assert.equal(explorerLinks.getExplorerAccountLinkFor('0x70FDd102DDB03Dc55B1719E76DfeA784916621fd', 4), 'https://rinkeby.etherscan.io/address/0x70FDd102DDB03Dc55B1719E76DfeA784916621fd')
 			})
 			it(`${claimPrefix} Kovan`, () => {
-				assert.equal(explorerLinks.getExplorerAccountLinkFor('0x70FDd102DDB03Dc55B1719E76DfeA784916621fd', 42), 'https://blockscout.com/eth/kovan/address/0x70FDd102DDB03Dc55B1719E76DfeA784916621fd')
+				assert.equal(explorerLinks.getExplorerAccountLinkFor('0x70FDd102DDB03Dc55B1719E76DfeA784916621fd', 42), 'https://kovan.etherscan.io/address/0x70FDd102DDB03Dc55B1719E76DfeA784916621fd')
 			})
 			it(`${claimPrefix} RSK Mainnet`, () => {
 				assert.equal(explorerLinks.getExplorerAccountLinkFor('0x70FDd102DDB03Dc55B1719E76DfeA784916621fd', 30), 'https://blockscout.com/rsk/mainnet/address/0x70FDd102DDB03Dc55B1719E76DfeA784916621fd')
 			})
 			it(`${claimPrefix} Goerli Testnet`, () => {
-				assert.equal(explorerLinks.getExplorerAccountLinkFor('0xd8fe15886d2dcbc5d7c06394beb417aadaf1eee0', 5), 'https://blockscout.com/eth/goerli/address/0xd8fe15886d2dcbc5d7c06394beb417aadaf1eee0')
+				assert.equal(explorerLinks.getExplorerAccountLinkFor('0xd8fe15886d2dcbc5d7c06394beb417aadaf1eee0', 5), 'https://goerli.etherscan.io/address/0xd8fe15886d2dcbc5d7c06394beb417aadaf1eee0')
 			})
 			it(`${claimPrefix} Ethereum Classic`, () => {
 				assert.equal(explorerLinks.getExplorerAccountLinkFor('0xd8fe15886d2dcbc5d7c06394beb417aadaf1eee0', 61), 'https://blockscout.com/etc/mainnet/address/0xd8fe15886d2dcbc5d7c06394beb417aadaf1eee0')
@@ -54,25 +54,25 @@ describe('eth-net-props', () => {
 				assert.equal(explorerLinks.getExplorerTxLinkFor('0xb3b01bcc1a73477cd86de989cc207fa59f87ea601dea298772f4b1b3f6f1407e', 99), 'https://blockscout.com/poa/core/tx/0xb3b01bcc1a73477cd86de989cc207fa59f87ea601dea298772f4b1b3f6f1407e')
 			})
 			it(`${claimPrefix} Dai Chain`, () => {
-				assert.equal(explorerLinks.getExplorerTxLinkFor('0xb3b01bcc1a73477cd86de989cc207fa59f87ea601dea298772f4b1b3f6f1407e', 100), 'https://blockscout.com/poa/dai/tx/0xb3b01bcc1a73477cd86de989cc207fa59f87ea601dea298772f4b1b3f6f1407e')
+				assert.equal(explorerLinks.getExplorerTxLinkFor('0xb3b01bcc1a73477cd86de989cc207fa59f87ea601dea298772f4b1b3f6f1407e', 100), 'https://blockscout.com/poa/xdai/tx/0xb3b01bcc1a73477cd86de989cc207fa59f87ea601dea298772f4b1b3f6f1407e')
 			})
 			it(`${claimPrefix} Mainnet`, () => {
 				assert.equal(explorerLinks.getExplorerTxLinkFor('0x892c825d1ec25b0a1a27aa5dff5b54fc4488a45029d0087fc40d3d733ded7305', 1), 'https://blockscout.com/eth/mainnet/tx/0x892c825d1ec25b0a1a27aa5dff5b54fc4488a45029d0087fc40d3d733ded7305')
 			})
 			it(`${claimPrefix} Ropsten`, () => {
-				assert.equal(explorerLinks.getExplorerTxLinkFor('0x892c825d1ec25b0a1a27aa5dff5b54fc4488a45029d0087fc40d3d733ded7305', 3), 'https://blockscout.com/eth/ropsten/tx/0x892c825d1ec25b0a1a27aa5dff5b54fc4488a45029d0087fc40d3d733ded7305')
+				assert.equal(explorerLinks.getExplorerTxLinkFor('0x892c825d1ec25b0a1a27aa5dff5b54fc4488a45029d0087fc40d3d733ded7305', 3), 'https://ropsten.etherscan.io/tx/0x892c825d1ec25b0a1a27aa5dff5b54fc4488a45029d0087fc40d3d733ded7305')
 			})
 			it(`${claimPrefix} Rinkeby`, () => {
-				assert.equal(explorerLinks.getExplorerTxLinkFor('0x892c825d1ec25b0a1a27aa5dff5b54fc4488a45029d0087fc40d3d733ded7305', 4), 'https://blockscout.com/eth/rinkeby/tx/0x892c825d1ec25b0a1a27aa5dff5b54fc4488a45029d0087fc40d3d733ded7305')
+				assert.equal(explorerLinks.getExplorerTxLinkFor('0x892c825d1ec25b0a1a27aa5dff5b54fc4488a45029d0087fc40d3d733ded7305', 4), 'https://rinkeby.etherscan.io/tx/0x892c825d1ec25b0a1a27aa5dff5b54fc4488a45029d0087fc40d3d733ded7305')
 			})
 			it(`${claimPrefix} Kovan`, () => {
-				assert.equal(explorerLinks.getExplorerTxLinkFor('0x892c825d1ec25b0a1a27aa5dff5b54fc4488a45029d0087fc40d3d733ded7305', 42), 'https://blockscout.com/eth/kovan/tx/0x892c825d1ec25b0a1a27aa5dff5b54fc4488a45029d0087fc40d3d733ded7305')
+				assert.equal(explorerLinks.getExplorerTxLinkFor('0x892c825d1ec25b0a1a27aa5dff5b54fc4488a45029d0087fc40d3d733ded7305', 42), 'https://kovan.etherscan.io/tx/0x892c825d1ec25b0a1a27aa5dff5b54fc4488a45029d0087fc40d3d733ded7305')
 			})
 			it(`${claimPrefix} RSK Mainnet`, () => {
 				assert.equal(explorerLinks.getExplorerTxLinkFor('0x33a7511c7838f5be0ade40d732f0a51cd28c8a641de9079836170cbdac8e7d83', 30), 'https://blockscout.com/rsk/mainnet/tx/0x33a7511c7838f5be0ade40d732f0a51cd28c8a641de9079836170cbdac8e7d83')
 			})
 			it(`${claimPrefix} Goerli Testnet`, () => {
-				assert.equal(explorerLinks.getExplorerTxLinkFor('0xb9599801c83e6aa20769e7dcdce0989c7380ba78cb587d3d7db11e1b30b17b54', 5), 'https://blockscout.com/eth/goerli/tx/0xb9599801c83e6aa20769e7dcdce0989c7380ba78cb587d3d7db11e1b30b17b54')
+				assert.equal(explorerLinks.getExplorerTxLinkFor('0xb9599801c83e6aa20769e7dcdce0989c7380ba78cb587d3d7db11e1b30b17b54', 5), 'https://goerli.etherscan.io/tx/0xb9599801c83e6aa20769e7dcdce0989c7380ba78cb587d3d7db11e1b30b17b54')
 			})
 			it(`${claimPrefix} Ethereum Classic`, () => {
 				assert.equal(explorerLinks.getExplorerTxLinkFor('0x430c90335b32fdcd92e54991668023d58b72bce836e204a81c6d97506c7137e5', 61), 'https://blockscout.com/etc/mainnet/tx/0x430c90335b32fdcd92e54991668023d58b72bce836e204a81c6d97506c7137e5')
@@ -80,35 +80,35 @@ describe('eth-net-props', () => {
 		})
 
 		describe ('getExplorerTokenLinkFor()', () => {
-			it(`${claimPrefix} Sokol POA Network`, () => {
-				assert.equal(explorerLinks.getExplorerTokenLinkFor('0xcf2AEDCfb4ff2c9020fb61c41226A4DfD77D12dE', '0x70FDd102DDB03Dc55B1719E76DfeA784916621fd', 77), 'https://blockscout.com/poa/sokol/tokens/0xcf2AEDCfb4ff2c9020fb61c41226A4DfD77D12dE')
+			it(`${claimPrefix} POA Sokol`, () => {
+				assert.equal(explorerLinks.getExplorerTokenLinkFor('0xcf2AEDCfb4ff2c9020fb61c41226A4DfD77D12dE', '0x70FDd102DDB03Dc55B1719E76DfeA784916621fd', 77), 'https://blockscout.com/poa/sokol/address/0x70FDd102DDB03Dc55B1719E76DfeA784916621fd/tokens/0xcf2AEDCfb4ff2c9020fb61c41226A4DfD77D12dE/token_transfers')
 			})
-			it(`${claimPrefix} Core POA Network`, () => {
-				assert.equal(explorerLinks.getExplorerTokenLinkFor('0xcf2AEDCfb4ff2c9020fb61c41226A4DfD77D12dE', '0x70FDd102DDB03Dc55B1719E76DfeA784916621fd', 99), 'https://blockscout.com/poa/core/tokens/0xcf2AEDCfb4ff2c9020fb61c41226A4DfD77D12dE')
+			it(`${claimPrefix} POA Core`, () => {
+				assert.equal(explorerLinks.getExplorerTokenLinkFor('0xAb2f2Dd3120dE530d38936EE09A74a6d17e3Da44', '0x4C4b0F3fb93A33d58b07117ae079775496CF9c17', 99), 'https://blockscout.com/poa/core/address/0x4C4b0F3fb93A33d58b07117ae079775496CF9c17/tokens/0xAb2f2Dd3120dE530d38936EE09A74a6d17e3Da44/token_transfers')
 			})
-			it(`${claimPrefix} Dai Chain`, () => {
-				assert.equal(explorerLinks.getExplorerTokenLinkFor('0xabe71e6a260c2eea3c30864dc50639100aa315f6', '0x70FDd102DDB03Dc55B1719E76DfeA784916621fd', 100), 'https://blockscout.com/poa/dai/tokens/0xabe71e6a260c2eea3c30864dc50639100aa315f6')
+			it(`${claimPrefix} xDai Chain`, () => {
+				assert.equal(explorerLinks.getExplorerTokenLinkFor('0xABE71e6a260C2eEa3C30864Dc50639100Aa315f6', '0xEca0f4Bd861713aF4f248CED18C15AF76440b00a', 100), 'https://blockscout.com/poa/xdai/address/0xEca0f4Bd861713aF4f248CED18C15AF76440b00a/tokens/0xABE71e6a260C2eEa3C30864Dc50639100Aa315f6/token_transfers')
 			})
 			it(`${claimPrefix} Mainnet`, () => {
-				assert.equal(explorerLinks.getExplorerTokenLinkFor('0x5a386eb0fcbfee3f0d759e263053c09162ff102d', '0x70FDd102DDB03Dc55B1719E76DfeA784916621fd', 1), 'https://blockscout.com/eth/mainnet/tokens/0x5a386eb0fcbfee3f0d759e263053c09162ff102d')
+				assert.equal(explorerLinks.getExplorerTokenLinkFor('0x5a386eb0fcbfee3f0d759e263053c09162ff102d', '0x2C343e73A594DfD1808b930372A610071bAa9d0E', 1), 'https://blockscout.com/eth/mainnet/address/0x2C343e73A594DfD1808b930372A610071bAa9d0E/tokens/0x5a386eb0fcbfee3f0d759e263053c09162ff102d/token_transfers')
 			})
 			it(`${claimPrefix} Ropsten`, () => {
-				assert.equal(explorerLinks.getExplorerTokenLinkFor('0xcf2AEDCfb4ff2c9020fb61c41226A4DfD77D12dE', '0x70FDd102DDB03Dc55B1719E76DfeA784916621fd', 3), 'https://blockscout.com/eth/ropsten/tokens/0xcf2AEDCfb4ff2c9020fb61c41226A4DfD77D12dE')
+				assert.equal(explorerLinks.getExplorerTokenLinkFor('0xcf2AEDCfb4ff2c9020fb61c41226A4DfD77D12dE', '0x70FDd102DDB03Dc55B1719E76DfeA784916621fd', 3), 'https://ropsten.etherscan.io/token/0xcf2AEDCfb4ff2c9020fb61c41226A4DfD77D12dE?a=0x70FDd102DDB03Dc55B1719E76DfeA784916621fd')
 			})
 			it(`${claimPrefix} Rinkeby`, () => {
-				assert.equal(explorerLinks.getExplorerTokenLinkFor('0x4cc97adba4298d575ad22a42a976af4e2250b328', '0x70FDd102DDB03Dc55B1719E76DfeA784916621fd', 4), 'https://blockscout.com/eth/rinkeby/tokens/0x4cc97adba4298d575ad22a42a976af4e2250b328')
+				assert.equal(explorerLinks.getExplorerTokenLinkFor('0x4cc97adba4298d575ad22a42a976af4e2250b328', '0x70FDd102DDB03Dc55B1719E76DfeA784916621fd', 4), 'https://rinkeby.etherscan.io/token/0x4cc97adba4298d575ad22a42a976af4e2250b328?a=0x70FDd102DDB03Dc55B1719E76DfeA784916621fd')
 			})
 			it(`${claimPrefix} Kovan`, () => {
-				assert.equal(explorerLinks.getExplorerTokenLinkFor('0x50c9fd8e20792e2decc5e35a0c1d17a51555347b', '0x70FDd102DDB03Dc55B1719E76DfeA784916621fd', 42), 'https://blockscout.com/eth/kovan/tokens/0x50c9fd8e20792e2decc5e35a0c1d17a51555347b')
+				assert.equal(explorerLinks.getExplorerTokenLinkFor('0x50c9fd8e20792e2decc5e35a0c1d17a51555347b', '0x70FDd102DDB03Dc55B1719E76DfeA784916621fd', 42), 'https://kovan.etherscan.io/token/0x50c9fd8e20792e2decc5e35a0c1d17a51555347b?a=0x70FDd102DDB03Dc55B1719E76DfeA784916621fd')
 			})
 			it(`${claimPrefix} RSK Mainnet`, () => {
-				assert.equal(explorerLinks.getExplorerTokenLinkFor('0x16cb2604ce5951c8506fbf690d816be6d0aa00fb', '0x604056c0f88aed17ef975269aab1ae9d02840bb2', 30), 'https://blockscout.com/rsk/mainnet/tokens/0x16cb2604ce5951c8506fbf690d816be6d0aa00fb')
+				assert.equal(explorerLinks.getExplorerTokenLinkFor('0x16cb2604ce5951c8506fbf690d816be6d0aa00fb', '0x604056c0f88aed17ef975269aab1ae9d02840bb2', 30), 'https://blockscout.com/rsk/mainnet/address/0x604056c0f88aed17ef975269aab1ae9d02840bb2/tokens/0x16cb2604ce5951c8506fbf690d816be6d0aa00fb/token_transfers')
 			})
 			it(`${claimPrefix} Goerli testnet`, () => {
-				assert.equal(explorerLinks.getExplorerTokenLinkFor('0x7af963cf6d228e564e2a0aa0ddbf06210b38615d', '0x604056c0f88aed17ef975269aab1ae9d02840bb2', 5), 'https://blockscout.com/eth/goerli/tokens/0x7af963cf6d228e564e2a0aa0ddbf06210b38615d')
+				assert.equal(explorerLinks.getExplorerTokenLinkFor('0x7af963cf6d228e564e2a0aa0ddbf06210b38615d', '0x604056c0f88aed17ef975269aab1ae9d02840bb2', 5), 'https://goerli.etherscan.io/token/0x7af963cf6d228e564e2a0aa0ddbf06210b38615d?a=0x604056c0f88aed17ef975269aab1ae9d02840bb2')
 			})
 			it(`${claimPrefix} Ethereum Classic`, () => {
-				assert.equal(explorerLinks.getExplorerTokenLinkFor('0x1ac1c8b874c7b889113a036ba443b082554be5d0', '0x604056c0f88aed17ef975269aab1ae9d02840bb2', 61), 'https://blockscout.com/etc/mainnet/tokens/0x1ac1c8b874c7b889113a036ba443b082554be5d0')
+				assert.equal(explorerLinks.getExplorerTokenLinkFor('0x1ac1c8b874c7b889113a036ba443b082554be5d0', '0xdb23145b64D0E1e15dedf47abd77cCaf3F2327d7', 61), 'https://blockscout.com/etc/mainnet/address/0xdb23145b64D0E1e15dedf47abd77cCaf3F2327d7/tokens/0x1ac1c8b874c7b889113a036ba443b082554be5d0/token_transfers')
 			})
 		})
 	})
@@ -242,7 +242,7 @@ describe('eth-net-props', () => {
 			const ETCRPCEndpoints = RPCEndpoints.getRPCEndpoints(61)
 			assert.equal(ETCRPCEndpoints.length, 1)
 			if (ETCRPCEndpoints.length > 0) {
-				assert.equal(ETCRPCEndpoints[0], 'https://www.ethercluster.com/etc/')
+				assert.equal(ETCRPCEndpoints[0], 'https://www.ethercluster.com/etc')
 			}
 		})
 	})
