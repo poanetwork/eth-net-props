@@ -207,14 +207,14 @@ describe('eth-net-props', () => {
 			const POARPCEndpoints = RPCEndpoints.getRPCEndpoints(99)
 			assert.equal(POARPCEndpoints.length, 1)
 			if (POARPCEndpoints.length > 0) {
-				assert.equal(POARPCEndpoints[0], 'https://core.poa.network/')
+				assert.equal(POARPCEndpoints[0], 'https://core.poanetwork.dev/')
 			}
 		})
 		it(`${claimPrefix} xDai chain`, () => {
 			const xDaiRPCEndpoints = RPCEndpoints.getRPCEndpoints(100)
 			assert.equal(xDaiRPCEndpoints.length, 1)
 			if (xDaiRPCEndpoints.length > 0) {
-				assert.equal(xDaiRPCEndpoints[0], 'https://dai.poa.network/')
+				assert.equal(xDaiRPCEndpoints[0], 'https://xdai.poanetwork.dev/')
 			}
 		})
 		it(`${claimPrefix} RSK Mainnet`, () => {

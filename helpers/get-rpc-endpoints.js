@@ -29,9 +29,9 @@ function getRPCEndpoints(network) {
 	case SOKOL_CODE:
 		return ['https://sokol.poa.network/']
 	case POA_CORE_CODE:
-		return ['https://core.poa.network/']
+		return ['https://core.poanetwork.dev/']
 	case XDAI_CODE:
-		return ['https://dai.poa.network/']
+		return ['https://xdai.poanetwork.dev/']
 	case RSK_CODE:
 		return ['https://public-node.rsk.co']
 	case RSK_TESTNET_CODE:
