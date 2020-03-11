@@ -17,23 +17,23 @@ function getNetworkDisplayName(network) {
 	const netID = parseInt(network)
 	switch (netID) {
 	case MAINNET_CODE:
-		return 'Main Ethereum Network'
+		return 'Ethereum'
 	case ROPSTEN_CODE:
-		return 'Ropsten Test Network'
+		return 'Ropsten Testnet'
 	case RINKEBY_CODE:
-		return 'Rinkeby Test Network'
+		return 'Rinkeby Testnet'
 	case GOERLI_CODE:
-		return 'Görli Test Network'
+		return 'Görli Testnet'
 	case KOVAN_CODE:
-		return 'Kovan Test Network'
+		return 'Kovan Testnet'
 	case SOKOL_CODE:
-		return 'Sokol Test Network'
+		return 'Sokol Testnet'
 	case POA_CORE_CODE:
 		return 'POA Core'
 	case XDAI_CODE:
 		return 'xDai Chain'
 	case RSK_CODE:
-		return 'RSK Mainnet'
+		return 'RSK'
 	case RSK_TESTNET_CODE:
 		return 'RSK Testnet'
 	case CLASSIC_CODE:

@@ -250,7 +250,7 @@ describe('eth-net-props', () => {
 	claimPrefix = 'should return correct display name for'
 	describe('get network properties', () => {
 		it(`${claimPrefix} Sokol POA Network`, () => {
-			assert.equal(netProps.getNetworkDisplayName(77), 'Sokol Test Network')
+			assert.equal(netProps.getNetworkDisplayName(77), 'Sokol Testnet')
 		})
 		it(`${claimPrefix} Core POA Network`, () => {
 			assert.equal(netProps.getNetworkDisplayName(99), 'POA Core')
@@ -259,31 +259,31 @@ describe('eth-net-props', () => {
 			assert.equal(netProps.getNetworkDisplayName(100), 'xDai Chain')
 		})
 		it(`${claimPrefix} Mainnet`, () => {
-			assert.equal(netProps.getNetworkDisplayName(1), 'Main Ethereum Network')
+			assert.equal(netProps.getNetworkDisplayName(1), 'Ethereum')
 		})
 		it(`${claimPrefix} RSK Mainnet`, () => {
-			assert.equal(netProps.getNetworkDisplayName(30), 'RSK Mainnet')
+			assert.equal(netProps.getNetworkDisplayName(30), 'RSK')
 		})
 		it(`${claimPrefix} Ropsten`, () => {
-			assert.equal(netProps.getNetworkDisplayName(3), 'Ropsten Test Network')
+			assert.equal(netProps.getNetworkDisplayName(3), 'Ropsten Testnet')
 		})
 		it(`${claimPrefix} Rinkeby`, () => {
-			assert.equal(netProps.getNetworkDisplayName(4), 'Rinkeby Test Network')
+			assert.equal(netProps.getNetworkDisplayName(4), 'Rinkeby Testnet')
 		})
 		it(`${claimPrefix} Kovan`, () => {
-			assert.equal(netProps.getNetworkDisplayName(42), 'Kovan Test Network')
+			assert.equal(netProps.getNetworkDisplayName(42), 'Kovan Testnet')
 		})
 		it(`${claimPrefix} RSK Testnet`, () => {
 			assert.equal(netProps.getNetworkDisplayName(31), 'RSK Testnet')
 		})
 		it(`${claimPrefix} Goerli Testnet`, () => {
-			assert.equal(netProps.getNetworkDisplayName(5), 'Görli Test Network')
+			assert.equal(netProps.getNetworkDisplayName(5), 'Görli Testnet')
 		})
 		it(`${claimPrefix} Ethereum Classic`, () => {
 			assert.equal(netProps.getNetworkDisplayName(61), 'Ethereum Classic')
 		})
 		it(`${claimPrefix} Sokol POA Network`, () => {
-			assert.equal(netProps.getNetworkDisplayName('77'), 'Sokol Test Network')
+			assert.equal(netProps.getNetworkDisplayName('77'), 'Sokol Testnet')
 		})
 
 		claimPrefix = 'should return correct coin name for'
