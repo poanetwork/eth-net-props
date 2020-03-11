@@ -29,9 +29,9 @@ function getNetworkDisplayName(network) {
 	case SOKOL_CODE:
 		return 'Sokol Testnet'
 	case POA_CORE_CODE:
-		return 'POA Core'
+		return 'POA'
 	case XDAI_CODE:
-		return 'xDai Chain'
+		return 'xDai'
 	case RSK_CODE:
 		return 'RSK'
 	case RSK_TESTNET_CODE:
