@@ -1,6 +1,6 @@
 {
   "name": "eth-net-props",
-  "version": "1.0.31",
+  "version": "1.0.32",
   "description": "Get properties of EMV-based network",
   "main": "index.js",
   "directories": {
@@ -10,11 +10,11 @@
     "chai": "^4.2.0"
   },
   "devDependencies": {
-    "coveralls": "^3.0.8",
+    "coveralls": "^3.0.9",
     "eslint": "^6.7.0",
     "mocha": "^6.2.2",
     "mocha-lcov-reporter": "^1.3.0",
-    "nyc": "^14.1.1"
+    "nyc": "^15.0.0"
   },
   "homepage": "https://github.com/poanetwork/eth-net-props#readme",
   "repository": {

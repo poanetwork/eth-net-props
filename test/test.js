@@ -148,7 +148,7 @@ describe('eth-net-props', () => {
 			const RSKFaucetLinks = faucetLinks.getFaucetLinks(31)
 			assert.equal(RSKFaucetLinks.length, 1)
 			if (RSKFaucetLinks.length > 0) {
-				assert.equal(RSKFaucetLinks[0], 'https://faucet.testnet.rsk.co/')
+				assert.equal(RSKFaucetLinks[0], 'https://faucet.rsk.co/')
 			}
 		})
 		it(`${claimPrefix} Goerli Testnet`, () => {
