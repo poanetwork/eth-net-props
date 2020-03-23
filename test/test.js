@@ -35,6 +35,9 @@ describe('eth-net-props', () => {
 			it(`${claimPrefix} RSK`, () => {
 				assert.equal(explorerLinks.getExplorerAccountLinkFor('0x70FDd102DDB03Dc55B1719E76DfeA784916621fd', 30), 'https://blockscout.com/rsk/mainnet/address/0x70FDd102DDB03Dc55B1719E76DfeA784916621fd')
 			})
+			it(`${claimPrefix} RSK Testnet`, () => {
+				assert.equal(explorerLinks.getExplorerAccountLinkFor('0x70FDd102DDB03Dc55B1719E76DfeA784916621fd', 31), 'https://explorer.testnet.rsk.co/address/0x70FDd102DDB03Dc55B1719E76DfeA784916621fd')
+			})
 			it(`${claimPrefix} Goerli Testnet`, () => {
 				assert.equal(explorerLinks.getExplorerAccountLinkFor('0xd8fe15886d2dcbc5d7c06394beb417aadaf1eee0', 5), 'https://goerli.etherscan.io/address/0xd8fe15886d2dcbc5d7c06394beb417aadaf1eee0')
 			})
@@ -71,6 +74,9 @@ describe('eth-net-props', () => {
 			it(`${claimPrefix} RSK`, () => {
 				assert.equal(explorerLinks.getExplorerTxLinkFor('0x33a7511c7838f5be0ade40d732f0a51cd28c8a641de9079836170cbdac8e7d83', 30), 'https://blockscout.com/rsk/mainnet/tx/0x33a7511c7838f5be0ade40d732f0a51cd28c8a641de9079836170cbdac8e7d83')
 			})
+			it(`${claimPrefix} RSK Testnet`, () => {
+				assert.equal(explorerLinks.getExplorerTxLinkFor('0x33a7511c7838f5be0ade40d732f0a51cd28c8a641de9079836170cbdac8e7d83', 31), 'https://explorer.testnet.rsk.co/tx/0x33a7511c7838f5be0ade40d732f0a51cd28c8a641de9079836170cbdac8e7d83')
+			})
 			it(`${claimPrefix} Goerli Testnet`, () => {
 				assert.equal(explorerLinks.getExplorerTxLinkFor('0xb9599801c83e6aa20769e7dcdce0989c7380ba78cb587d3d7db11e1b30b17b54', 5), 'https://goerli.etherscan.io/tx/0xb9599801c83e6aa20769e7dcdce0989c7380ba78cb587d3d7db11e1b30b17b54')
 			})
@@ -103,6 +109,9 @@ describe('eth-net-props', () => {
 			})
 			it(`${claimPrefix} RSK`, () => {
 				assert.equal(explorerLinks.getExplorerTokenLinkFor('0x16cb2604ce5951c8506fbf690d816be6d0aa00fb', '0x604056c0f88aed17ef975269aab1ae9d02840bb2', 30), 'https://blockscout.com/rsk/mainnet/address/0x604056c0f88aed17ef975269aab1ae9d02840bb2/tokens/0x16cb2604ce5951c8506fbf690d816be6d0aa00fb/token_transfers')
+			})
+			it(`${claimPrefix} RSK Testnet`, () => {
+				assert.equal(explorerLinks.getExplorerTokenLinkFor('0x16cb2604ce5951c8506fbf690d816be6d0aa00fb', '0x604056c0f88aed17ef975269aab1ae9d02840bb2', 31), 'https://explorer.testnet.rsk.co/address/0x16cb2604ce5951c8506fbf690d816be6d0aa00fb')
 			})
 			it(`${claimPrefix} Goerli Testnet`, () => {
 				assert.equal(explorerLinks.getExplorerTokenLinkFor('0x7af963cf6d228e564e2a0aa0ddbf06210b38615d', '0x604056c0f88aed17ef975269aab1ae9d02840bb2', 5), 'https://goerli.etherscan.io/token/0x7af963cf6d228e564e2a0aa0ddbf06210b38615d?a=0x604056c0f88aed17ef975269aab1ae9d02840bb2')
