@@ -122,6 +122,9 @@ describe('eth-net-props', () => {
 			it(`${claimPrefix} Ethereum Classic`, () => {
 				assert.equal(explorerLinks.getExplorerTokenLinkFor('0x1ac1c8b874c7b889113a036ba443b082554be5d0', '0xdb23145b64D0E1e15dedf47abd77cCaf3F2327d7', 61), 'https://blockscout.com/etc/mainnet/address/0xdb23145b64D0E1e15dedf47abd77cCaf3F2327d7/tokens/0x1ac1c8b874c7b889113a036ba443b082554be5d0/token_transfers')
 			})
+			it(`${claimPrefix} Callisto Network`, () => {
+				assert.equal(explorerLinks.getExplorerTokenLinkFor('0x1ac1c8b874c7b889113a036ba443b082554be5d0', '0xdb23145b64D0E1e15dedf47abd77cCaf3F2327d7', 820), 'https://explorer2.callisto.network/address/0x1ac1c8b874c7b889113a036ba443b082554be5d0')
+			})
 		})
 	})
 
