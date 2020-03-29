@@ -45,7 +45,7 @@ describe('eth-net-props', () => {
 				assert.equal(explorerLinks.getExplorerAccountLinkFor('0xd8fe15886d2dcbc5d7c06394beb417aadaf1eee0', 61), 'https://blockscout.com/etc/mainnet/address/0xd8fe15886d2dcbc5d7c06394beb417aadaf1eee0')
 			})
 			it(`${claimPrefix} Callisto Network`, () => {
-				assert.equal(explorerLinks.getExplorerAccountLinkFor('0xd8fe15886d2dcbc5d7c06394beb417aadaf1eee0', 820), 'https://explorer2.callisto.network/addr/0xd8fe15886d2dcbc5d7c06394beb417aadaf1eee0')
+				assert.equal(explorerLinks.getExplorerAccountLinkFor('0xd8fe15886d2dcbc5d7c06394beb417aadaf1eee0', 820), 'https://explorer2.callisto.network/address/0xd8fe15886d2dcbc5d7c06394beb417aadaf1eee0')
 			})
 		})
 
@@ -84,7 +84,7 @@ describe('eth-net-props', () => {
 				assert.equal(explorerLinks.getExplorerTxLinkFor('0x430c90335b32fdcd92e54991668023d58b72bce836e204a81c6d97506c7137e5', 61), 'https://blockscout.com/etc/mainnet/tx/0x430c90335b32fdcd92e54991668023d58b72bce836e204a81c6d97506c7137e5')
 			})
 			it(`${claimPrefix} Callisto Network`, () => {
-				assert.equal(explorerLinks.getExplorerTxLinkFor('0x430c90335b32fdcd92e54991668023d58b72bce836e204a81c6d97506c7137e5', 820), 'https://explorer2.callisto.network/tx/0xd8fe15886d2dcbc5d7c06394beb417aadaf1eee0')
+				assert.equal(explorerLinks.getExplorerTxLinkFor('0x430c90335b32fdcd92e54991668023d58b72bce836e204a81c6d97506c7137e5', 820), 'https://explorer2.callisto.network/tx/0x430c90335b32fdcd92e54991668023d58b72bce836e204a81c6d97506c7137e5')
 			})
 		})
 
