@@ -10,6 +10,7 @@ const networkIDs = {
 	XDAI_CODE: 100,
 	RSK_CODE: 30,
 	RSK_TESTNET_CODE: 31,
+	CALLISTO_NETWORK_CODE: 820
 }
 
 module.exports = {

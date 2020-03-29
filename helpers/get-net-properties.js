@@ -11,6 +11,7 @@ const {
 	RSK_CODE,
 	RSK_TESTNET_CODE,
 	CLASSIC_CODE,
+	CALLISTO_NETWORK_CODE
 } = networkIDs
 
 function getNetworkDisplayName(network) {
@@ -38,6 +39,8 @@ function getNetworkDisplayName(network) {
 		return 'RSK Testnet'
 	case CLASSIC_CODE:
 		return 'Ethereum Classic'
+	case CALLISTO_NETWORK_CODE:
+		return 'Callisto Network'
 	default:
 		return 'Unknown Private Network'
 	}
@@ -58,6 +61,8 @@ function getNetworkCoinName(network) {
 		return 'GöETH'
 	case CLASSIC_CODE:
 		return 'ETC'
+	case CALLISTO_NETWORK_CODE:
+		return 'CLO'
 	default:
 		return 'ETH'
 	}
@@ -71,6 +76,7 @@ function isTestnet(network) {
 	case XDAI_CODE:
 	case RSK_CODE:
 	case CLASSIC_CODE:
+	case CALLISTO_NETWORK_CODE:
 		return false
 	default:
 		return true

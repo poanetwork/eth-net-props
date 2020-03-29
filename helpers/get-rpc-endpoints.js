@@ -11,6 +11,7 @@ const {
 	RSK_CODE,
 	RSK_TESTNET_CODE,
 	CLASSIC_CODE,
+	CALLISTO_NETWORK_CODE
 } = networkIDs
 
 function getRPCEndpoints(network) {
@@ -38,6 +39,8 @@ function getRPCEndpoints(network) {
 		return ['https://public-node.testnet.rsk.co']
 	case CLASSIC_CODE:
 		return ['https://www.ethercluster.com/etc']
+	case CALLISTO_NETWORK_CODE:
+		return ['https://clo-geth.0xinfra.com']
 	default:
 		return []
 	}
