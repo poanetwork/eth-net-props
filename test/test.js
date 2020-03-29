@@ -44,8 +44,8 @@ describe('eth-net-props', () => {
 			it(`${claimPrefix} Ethereum Classic`, () => {
 				assert.equal(explorerLinks.getExplorerAccountLinkFor('0xd8fe15886d2dcbc5d7c06394beb417aadaf1eee0', 61), 'https://blockscout.com/etc/mainnet/address/0xd8fe15886d2dcbc5d7c06394beb417aadaf1eee0')
 			})
-			it(`${claimPrefix} Ethereum Classic`, () => {
-				assert.equal(explorerLinks.getExplorerAccountLinkFor('0xd8fe15886d2dcbc5d7c06394beb417aadaf1eee0', '61'), 'https://blockscout.com/etc/mainnet/address/0xd8fe15886d2dcbc5d7c06394beb417aadaf1eee0')
+			it(`${claimPrefix} Callisto Network`, () => {
+				assert.equal(explorerLinks.getExplorerAccountLinkFor('0xd8fe15886d2dcbc5d7c06394beb417aadaf1eee0', 820), 'https://explorer2.callisto.network/address/0xd8fe15886d2dcbc5d7c06394beb417aadaf1eee0')
 			})
 		})
 
@@ -83,6 +83,9 @@ describe('eth-net-props', () => {
 			it(`${claimPrefix} Ethereum Classic`, () => {
 				assert.equal(explorerLinks.getExplorerTxLinkFor('0x430c90335b32fdcd92e54991668023d58b72bce836e204a81c6d97506c7137e5', 61), 'https://blockscout.com/etc/mainnet/tx/0x430c90335b32fdcd92e54991668023d58b72bce836e204a81c6d97506c7137e5')
 			})
+			it(`${claimPrefix} Callisto Network`, () => {
+				assert.equal(explorerLinks.getExplorerTxLinkFor('0x430c90335b32fdcd92e54991668023d58b72bce836e204a81c6d97506c7137e5', 820), 'https://explorer2.callisto.network/tx/0x430c90335b32fdcd92e54991668023d58b72bce836e204a81c6d97506c7137e5')
+			})
 		})
 
 		describe ('getExplorerTokenLinkFor()', () => {
@@ -118,6 +121,9 @@ describe('eth-net-props', () => {
 			})
 			it(`${claimPrefix} Ethereum Classic`, () => {
 				assert.equal(explorerLinks.getExplorerTokenLinkFor('0x1ac1c8b874c7b889113a036ba443b082554be5d0', '0xdb23145b64D0E1e15dedf47abd77cCaf3F2327d7', 61), 'https://blockscout.com/etc/mainnet/address/0xdb23145b64D0E1e15dedf47abd77cCaf3F2327d7/tokens/0x1ac1c8b874c7b889113a036ba443b082554be5d0/token_transfers')
+			})
+			it(`${claimPrefix} Callisto Network`, () => {
+				assert.equal(explorerLinks.getExplorerTokenLinkFor('0x1ac1c8b874c7b889113a036ba443b082554be5d0', '0xdb23145b64D0E1e15dedf47abd77cCaf3F2327d7', 820), 'https://explorer2.callisto.network/address/0x1ac1c8b874c7b889113a036ba443b082554be5d0')
 			})
 		})
 	})
@@ -254,6 +260,13 @@ describe('eth-net-props', () => {
 				assert.equal(ETCRPCEndpoints[0], 'https://www.ethercluster.com/etc')
 			}
 		})
+		it(`${claimPrefix} Callisto Network`, () => {
+			const CLORPCEndpoints = RPCEndpoints.getRPCEndpoints(820)
+			assert.equal(CLORPCEndpoints.length, 1)
+			if (CLORPCEndpoints.length > 0) {
+				assert.equal(CLORPCEndpoints[0], 'https://clo-geth.0xinfra.com')
+			}
+		})
 	})
 
 	claimPrefix = 'should return correct display name for'
@@ -290,6 +303,9 @@ describe('eth-net-props', () => {
 		})
 		it(`${claimPrefix} Ethereum Classic`, () => {
 			assert.equal(netProps.getNetworkDisplayName(61), 'Ethereum Classic')
+		})
+		it(`${claimPrefix} Callisto Network`, () => {
+			assert.equal(netProps.getNetworkDisplayName(820), 'Callisto Network')
 		})
 		it(`${claimPrefix} Sokol Testnet`, () => {
 			assert.equal(netProps.getNetworkDisplayName('77'), 'Sokol Testnet')
@@ -329,6 +345,9 @@ describe('eth-net-props', () => {
 		it(`${claimPrefix} Ethereum Classic`, () => {
 			assert.equal(netProps.getNetworkCoinName(61), 'ETC')
 		})
+		it(`${claimPrefix} Callisto Network`, () => {
+			assert.equal(netProps.getNetworkCoinName(820), 'CLO')
+		})
 
 		it('Sokol is a testnet', () => {
 			assert.equal(netProps.isTestnet(77), true)
@@ -362,6 +381,9 @@ describe('eth-net-props', () => {
 		})
 		it('Ethereum Classic is a mainnet', () => {
 			assert.equal(netProps.isTestnet(61), false)
+		})
+		it('Callisto Network is a mainnet', () => {
+			assert.equal(netProps.isTestnet(820), false)
 		})
 	})
 })

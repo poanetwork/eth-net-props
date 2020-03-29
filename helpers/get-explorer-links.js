@@ -11,11 +11,13 @@ const {
 	RSK_CODE,
 	RSK_TESTNET_CODE,
 	CLASSIC_CODE,
+	CALLISTO_NETWORK_CODE
 } = networkIDs
 
 const blockScoutLink = (net, prefix) => `https://blockscout.com/${net}/${prefix}`
 const etherscanLink = (prefix) => `https://${prefix}.etherscan.io`
 const rskTestnetExplorerLink = 'https://explorer.testnet.rsk.co'
+const cloExplorerLink = 'https://explorer2.callisto.network'
 
 const explorerLink = (networkCode, net, prefix) => {
 	switch (networkCode) {
@@ -28,6 +30,8 @@ const explorerLink = (networkCode, net, prefix) => {
 		return blockScoutLink(net, prefix)
 	case RSK_TESTNET_CODE: // RSK testnet
 		return rskTestnetExplorerLink
+	case CALLISTO_NETWORK_CODE:
+		return cloExplorerLink
 	case ROPSTEN_CODE: // ropsten testnet
 	case RINKEBY_CODE: // rinkeby testnet
 	case KOVAN_CODE: // kovan testnet
@@ -42,6 +46,7 @@ const tokenLink = (networkCode, chain, prefix, tokenAddress, holderAddress) => {
 	const blockscoutLinkStr = `${blockScoutLink(chain, prefix)}/address/${holderAddress}/tokens/${tokenAddress}/token_transfers`
 	const etherscanLinkStr = `${etherscanLink(prefix)}/token/${tokenAddress}?a=${holderAddress}`
 	const rskTestnetExplorerLinkStr = `${rskTestnetExplorerLink}/address/${tokenAddress}`
+	const cloExplorerLinkStr = `${cloExplorerLink}/addr/${tokenAddress}`
 	switch (networkCode) {
 	case MAINNET_CODE: // main net
 	case SOKOL_CODE: // POA Sokol testnet
@@ -52,6 +57,8 @@ const tokenLink = (networkCode, chain, prefix, tokenAddress, holderAddress) => {
 		return blockscoutLinkStr
 	case RSK_TESTNET_CODE: // RSK testnet
 		return rskTestnetExplorerLinkStr
+	case CALLISTO_NETWORK_CODE:
+		return cloExplorerLinkStr
 	case ROPSTEN_CODE: // ropsten testnet
 	case RINKEBY_CODE: // rinkeby testnet
 	case KOVAN_CODE: // kovan testnet
@@ -98,6 +105,9 @@ function getExplorerChain (networkCode) {
 		break
 	case CLASSIC_CODE: // ETC mainnet
 		chain = 'etc'
+		break
+	case CALLISTO_NETWORK_CODE:
+		chain = 'clo'
 		break
 	case RSK_CODE: // RSK mainnet
 		chain = 'rsk'
