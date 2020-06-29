@@ -22,7 +22,7 @@ function getFaucetLinks(network) {
 	case SOKOL_CODE:
 		return ['https://faucet.poa.network/']
 	case RSK_TESTNET_CODE:
-		return ['https://faucet.testnet.rsk.co/']
+		return ['https://faucet.rsk.co/']
 	default:
 		return []
 	}
