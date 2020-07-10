@@ -14,12 +14,11 @@ const {
 } = networkIDs
 
 const blockScoutLink = (net, prefix) => `https://blockscout.com/${net}/${prefix}`
-const etherscanLink = (prefix) => `https://${prefix}.etherscan.io`
+const etherscanLink = (prefix) => prefix === 'mainnet' ? `https://etherscan.io` : `https://${prefix}.etherscan.io`
 const rskTestnetExplorerLink = 'https://explorer.testnet.rsk.co'
 
 const explorerLink = (networkCode, net, prefix) => {
 	switch (networkCode) {
-	case MAINNET_CODE: // main net
 	case SOKOL_CODE: // POA Sokol testnet
 	case POA_CORE_CODE: // POA Core
 	case XDAI_CODE: // xDai chain
@@ -28,6 +27,7 @@ const explorerLink = (networkCode, net, prefix) => {
 		return blockScoutLink(net, prefix)
 	case RSK_TESTNET_CODE: // RSK testnet
 		return rskTestnetExplorerLink
+	case MAINNET_CODE: // main net
 	case ROPSTEN_CODE: // ropsten testnet
 	case RINKEBY_CODE: // rinkeby testnet
 	case KOVAN_CODE: // kovan testnet
@@ -43,7 +43,6 @@ const tokenLink = (networkCode, chain, prefix, tokenAddress, holderAddress) => {
 	const etherscanLinkStr = `${etherscanLink(prefix)}/token/${tokenAddress}?a=${holderAddress}`
 	const rskTestnetExplorerLinkStr = `${rskTestnetExplorerLink}/address/${tokenAddress}`
 	switch (networkCode) {
-	case MAINNET_CODE: // main net
 	case SOKOL_CODE: // POA Sokol testnet
 	case POA_CORE_CODE: // POA Core
 	case XDAI_CODE: // xDai chain
@@ -52,6 +51,7 @@ const tokenLink = (networkCode, chain, prefix, tokenAddress, holderAddress) => {
 		return blockscoutLinkStr
 	case RSK_TESTNET_CODE: // RSK testnet
 		return rskTestnetExplorerLinkStr
+	case MAINNET_CODE: // main net
 	case ROPSTEN_CODE: // ropsten testnet
 	case RINKEBY_CODE: // rinkeby testnet
 	case KOVAN_CODE: // kovan testnet
