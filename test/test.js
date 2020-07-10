@@ -21,7 +21,7 @@ describe('eth-net-props', () => {
 				assert.equal(explorerLinks.getExplorerAccountLinkFor('0x15c40c6de9f2299680a4522d8635c9b394eded09', 100), 'https://blockscout.com/poa/xdai/address/0x15c40c6de9f2299680a4522d8635c9b394eded09')
 			})
 			it(`${claimPrefix} Ethereum`, () => {
-				assert.equal(explorerLinks.getExplorerAccountLinkFor('0x70FDd102DDB03Dc55B1719E76DfeA784916621fd', 1), 'https://blockscout.com/eth/mainnet/address/0x70FDd102DDB03Dc55B1719E76DfeA784916621fd')
+				assert.equal(explorerLinks.getExplorerAccountLinkFor('0x70FDd102DDB03Dc55B1719E76DfeA784916621fd', 1), 'https://etherscan.io/address/0x70FDd102DDB03Dc55B1719E76DfeA784916621fd')
 			})
 			it(`${claimPrefix} Ropsten Testnet`, () => {
 				assert.equal(explorerLinks.getExplorerAccountLinkFor('0x70FDd102DDB03Dc55B1719E76DfeA784916621fd', 3), 'https://ropsten.etherscan.io/address/0x70FDd102DDB03Dc55B1719E76DfeA784916621fd')
@@ -60,7 +60,7 @@ describe('eth-net-props', () => {
 				assert.equal(explorerLinks.getExplorerTxLinkFor('0xb3b01bcc1a73477cd86de989cc207fa59f87ea601dea298772f4b1b3f6f1407e', 100), 'https://blockscout.com/poa/xdai/tx/0xb3b01bcc1a73477cd86de989cc207fa59f87ea601dea298772f4b1b3f6f1407e')
 			})
 			it(`${claimPrefix} Ethereum`, () => {
-				assert.equal(explorerLinks.getExplorerTxLinkFor('0x892c825d1ec25b0a1a27aa5dff5b54fc4488a45029d0087fc40d3d733ded7305', 1), 'https://blockscout.com/eth/mainnet/tx/0x892c825d1ec25b0a1a27aa5dff5b54fc4488a45029d0087fc40d3d733ded7305')
+				assert.equal(explorerLinks.getExplorerTxLinkFor('0x892c825d1ec25b0a1a27aa5dff5b54fc4488a45029d0087fc40d3d733ded7305', 1), 'https://etherscan.io/tx/0x892c825d1ec25b0a1a27aa5dff5b54fc4488a45029d0087fc40d3d733ded7305')
 			})
 			it(`${claimPrefix} Ropsten Testnet`, () => {
 				assert.equal(explorerLinks.getExplorerTxLinkFor('0x892c825d1ec25b0a1a27aa5dff5b54fc4488a45029d0087fc40d3d733ded7305', 3), 'https://ropsten.etherscan.io/tx/0x892c825d1ec25b0a1a27aa5dff5b54fc4488a45029d0087fc40d3d733ded7305')
@@ -96,7 +96,7 @@ describe('eth-net-props', () => {
 				assert.equal(explorerLinks.getExplorerTokenLinkFor('0xABE71e6a260C2eEa3C30864Dc50639100Aa315f6', '0xEca0f4Bd861713aF4f248CED18C15AF76440b00a', 100), 'https://blockscout.com/poa/xdai/address/0xEca0f4Bd861713aF4f248CED18C15AF76440b00a/tokens/0xABE71e6a260C2eEa3C30864Dc50639100Aa315f6/token_transfers')
 			})
 			it(`${claimPrefix} Ethereum`, () => {
-				assert.equal(explorerLinks.getExplorerTokenLinkFor('0x5a386eb0fcbfee3f0d759e263053c09162ff102d', '0x2C343e73A594DfD1808b930372A610071bAa9d0E', 1), 'https://blockscout.com/eth/mainnet/address/0x2C343e73A594DfD1808b930372A610071bAa9d0E/tokens/0x5a386eb0fcbfee3f0d759e263053c09162ff102d/token_transfers')
+				assert.equal(explorerLinks.getExplorerTokenLinkFor('0x5a386eb0fcbfee3f0d759e263053c09162ff102d', '0x2C343e73A594DfD1808b930372A610071bAa9d0E', 1), 'https://etherscan.io/token/0x5a386eb0fcbfee3f0d759e263053c09162ff102d?a=0x2C343e73A594DfD1808b930372A610071bAa9d0E')
 			})
 			it(`${claimPrefix} Ropsten Testnet`, () => {
 				assert.equal(explorerLinks.getExplorerTokenLinkFor('0xcf2AEDCfb4ff2c9020fb61c41226A4DfD77D12dE', '0x70FDd102DDB03Dc55B1719E76DfeA784916621fd', 3), 'https://ropsten.etherscan.io/token/0xcf2AEDCfb4ff2c9020fb61c41226A4DfD77D12dE?a=0x70FDd102DDB03Dc55B1719E76DfeA784916621fd')
