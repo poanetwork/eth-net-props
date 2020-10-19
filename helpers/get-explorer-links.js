@@ -39,7 +39,7 @@ const explorerLink = (networkCode, net, prefix) => {
 }
 
 const tokenLink = (networkCode, chain, prefix, tokenAddress, holderAddress) => {
-	const blockscoutLinkStr = `${blockScoutLink(chain, prefix)}/address/${holderAddress}/tokens/${tokenAddress}/token_transfers`
+	const blockscoutLinkStr = `${blockScoutLink(chain, prefix)}/address/${holderAddress}/tokens/${tokenAddress}/token-transfers`
 	const etherscanLinkStr = `${etherscanLink(prefix)}/token/${tokenAddress}?a=${holderAddress}`
 	const rskTestnetExplorerLinkStr = `${rskTestnetExplorerLink}/address/${tokenAddress}`
 	switch (networkCode) {

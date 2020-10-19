@@ -87,13 +87,13 @@ describe('eth-net-props', () => {
 
 		describe ('getExplorerTokenLinkFor()', () => {
 			it(`${claimPrefix} Sokol Testnet`, () => {
-				assert.equal(explorerLinks.getExplorerTokenLinkFor('0xcf2AEDCfb4ff2c9020fb61c41226A4DfD77D12dE', '0x70FDd102DDB03Dc55B1719E76DfeA784916621fd', 77), 'https://blockscout.com/poa/sokol/address/0x70FDd102DDB03Dc55B1719E76DfeA784916621fd/tokens/0xcf2AEDCfb4ff2c9020fb61c41226A4DfD77D12dE/token_transfers')
+				assert.equal(explorerLinks.getExplorerTokenLinkFor('0xcf2AEDCfb4ff2c9020fb61c41226A4DfD77D12dE', '0x70FDd102DDB03Dc55B1719E76DfeA784916621fd', 77), 'https://blockscout.com/poa/sokol/address/0x70FDd102DDB03Dc55B1719E76DfeA784916621fd/tokens/0xcf2AEDCfb4ff2c9020fb61c41226A4DfD77D12dE/token-transfers')
 			})
 			it(`${claimPrefix} POA`, () => {
-				assert.equal(explorerLinks.getExplorerTokenLinkFor('0xAb2f2Dd3120dE530d38936EE09A74a6d17e3Da44', '0x4C4b0F3fb93A33d58b07117ae079775496CF9c17', 99), 'https://blockscout.com/poa/core/address/0x4C4b0F3fb93A33d58b07117ae079775496CF9c17/tokens/0xAb2f2Dd3120dE530d38936EE09A74a6d17e3Da44/token_transfers')
+				assert.equal(explorerLinks.getExplorerTokenLinkFor('0xAb2f2Dd3120dE530d38936EE09A74a6d17e3Da44', '0x4C4b0F3fb93A33d58b07117ae079775496CF9c17', 99), 'https://blockscout.com/poa/core/address/0x4C4b0F3fb93A33d58b07117ae079775496CF9c17/tokens/0xAb2f2Dd3120dE530d38936EE09A74a6d17e3Da44/token-transfers')
 			})
 			it(`${claimPrefix} xDai`, () => {
-				assert.equal(explorerLinks.getExplorerTokenLinkFor('0xABE71e6a260C2eEa3C30864Dc50639100Aa315f6', '0xEca0f4Bd861713aF4f248CED18C15AF76440b00a', 100), 'https://blockscout.com/poa/xdai/address/0xEca0f4Bd861713aF4f248CED18C15AF76440b00a/tokens/0xABE71e6a260C2eEa3C30864Dc50639100Aa315f6/token_transfers')
+				assert.equal(explorerLinks.getExplorerTokenLinkFor('0xABE71e6a260C2eEa3C30864Dc50639100Aa315f6', '0xEca0f4Bd861713aF4f248CED18C15AF76440b00a', 100), 'https://blockscout.com/poa/xdai/address/0xEca0f4Bd861713aF4f248CED18C15AF76440b00a/tokens/0xABE71e6a260C2eEa3C30864Dc50639100Aa315f6/token-transfers')
 			})
 			it(`${claimPrefix} Ethereum`, () => {
 				assert.equal(explorerLinks.getExplorerTokenLinkFor('0x5a386eb0fcbfee3f0d759e263053c09162ff102d', '0x2C343e73A594DfD1808b930372A610071bAa9d0E', 1), 'https://etherscan.io/token/0x5a386eb0fcbfee3f0d759e263053c09162ff102d?a=0x2C343e73A594DfD1808b930372A610071bAa9d0E')
@@ -108,7 +108,7 @@ describe('eth-net-props', () => {
 				assert.equal(explorerLinks.getExplorerTokenLinkFor('0x50c9fd8e20792e2decc5e35a0c1d17a51555347b', '0x70FDd102DDB03Dc55B1719E76DfeA784916621fd', 42), 'https://kovan.etherscan.io/token/0x50c9fd8e20792e2decc5e35a0c1d17a51555347b?a=0x70FDd102DDB03Dc55B1719E76DfeA784916621fd')
 			})
 			it(`${claimPrefix} RSK`, () => {
-				assert.equal(explorerLinks.getExplorerTokenLinkFor('0x16cb2604ce5951c8506fbf690d816be6d0aa00fb', '0x604056c0f88aed17ef975269aab1ae9d02840bb2', 30), 'https://blockscout.com/rsk/mainnet/address/0x604056c0f88aed17ef975269aab1ae9d02840bb2/tokens/0x16cb2604ce5951c8506fbf690d816be6d0aa00fb/token_transfers')
+				assert.equal(explorerLinks.getExplorerTokenLinkFor('0x16cb2604ce5951c8506fbf690d816be6d0aa00fb', '0x604056c0f88aed17ef975269aab1ae9d02840bb2', 30), 'https://blockscout.com/rsk/mainnet/address/0x604056c0f88aed17ef975269aab1ae9d02840bb2/tokens/0x16cb2604ce5951c8506fbf690d816be6d0aa00fb/token-transfers')
 			})
 			it(`${claimPrefix} RSK Testnet`, () => {
 				assert.equal(explorerLinks.getExplorerTokenLinkFor('0x16cb2604ce5951c8506fbf690d816be6d0aa00fb', '0x604056c0f88aed17ef975269aab1ae9d02840bb2', 31), 'https://explorer.testnet.rsk.co/address/0x16cb2604ce5951c8506fbf690d816be6d0aa00fb')
@@ -117,7 +117,7 @@ describe('eth-net-props', () => {
 				assert.equal(explorerLinks.getExplorerTokenLinkFor('0x7af963cf6d228e564e2a0aa0ddbf06210b38615d', '0x604056c0f88aed17ef975269aab1ae9d02840bb2', 5), 'https://goerli.etherscan.io/token/0x7af963cf6d228e564e2a0aa0ddbf06210b38615d?a=0x604056c0f88aed17ef975269aab1ae9d02840bb2')
 			})
 			it(`${claimPrefix} Ethereum Classic`, () => {
-				assert.equal(explorerLinks.getExplorerTokenLinkFor('0x1ac1c8b874c7b889113a036ba443b082554be5d0', '0xdb23145b64D0E1e15dedf47abd77cCaf3F2327d7', 61), 'https://blockscout.com/etc/mainnet/address/0xdb23145b64D0E1e15dedf47abd77cCaf3F2327d7/tokens/0x1ac1c8b874c7b889113a036ba443b082554be5d0/token_transfers')
+				assert.equal(explorerLinks.getExplorerTokenLinkFor('0x1ac1c8b874c7b889113a036ba443b082554be5d0', '0xdb23145b64D0E1e15dedf47abd77cCaf3F2327d7', 61), 'https://blockscout.com/etc/mainnet/address/0xdb23145b64D0E1e15dedf47abd77cCaf3F2327d7/tokens/0x1ac1c8b874c7b889113a036ba443b082554be5d0/token-transfers')
 			})
 		})
 	})
