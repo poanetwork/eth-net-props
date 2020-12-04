@@ -14,7 +14,7 @@ const {
 } = networkIDs
 
 const blockScoutLink = (net, prefix) => `https://blockscout.com/${net}/${prefix}`
-const etherscanLink = (prefix) => prefix === 'mainnet' ? `https://etherscan.io` : `https://${prefix}.etherscan.io`
+const etherscanLink = (prefix) => prefix === 'mainnet' ? 'https://etherscan.io' : `https://${prefix}.etherscan.io`
 const rskTestnetExplorerLink = 'https://explorer.testnet.rsk.co'
 
 const explorerLink = (networkCode, net, prefix) => {
