@@ -25,7 +25,7 @@ function getRPCEndpoints(network) {
 	case GOERLI_CODE:
 		return ['https://rpc.slock.it/goerli/']
 	case KOVAN_CODE:
-		return ['https://kovan.infura.io/']
+		return ['https://kovan.poa.network/']
 	case SOKOL_CODE:
 		return ['https://sokol.poa.network/']
 	case POA_CORE_CODE:

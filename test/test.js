@@ -202,7 +202,7 @@ describe('eth-net-props', () => {
 			const kovanRPCEndpoints = RPCEndpoints.getRPCEndpoints(42)
 			assert.equal(kovanRPCEndpoints.length, 1)
 			if (kovanRPCEndpoints.length > 0) {
-				assert.equal(kovanRPCEndpoints[0], 'https://kovan.infura.io/')
+				assert.equal(kovanRPCEndpoints[0], 'https://kovan.poa.network/')
 			}
 		})
 		it(`${claimPrefix} Ethereum`, () => {
