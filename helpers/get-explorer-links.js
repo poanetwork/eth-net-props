@@ -11,11 +11,17 @@ const {
 	RSK_CODE,
 	RSK_TESTNET_CODE,
 	CLASSIC_CODE,
+	CELO_CODE,
+	CELO_ALFAJORES_TESTNET_CODE,
+	CELO_BAKLAVA_TESTNET_CODE,
 } = networkIDs
 
 const blockScoutLink = (net, prefix) => `https://blockscout.com/${net}/${prefix}`
 const etherscanLink = (prefix) => prefix === 'mainnet' ? 'https://etherscan.io' : `https://${prefix}.etherscan.io`
 const rskTestnetExplorerLink = 'https://explorer.testnet.rsk.co'
+const celoExplorerLink = 'https://explorer.celo.org'
+const celoAlfajoresTestnetExplorerLink = 'https://alfajores-blockscout.celo-testnet.org'
+const celoBaklavaTestnetExplorerLink = 'https://baklava-blockscout.celo-testnet.org'
 
 const explorerLink = (networkCode, net, prefix) => {
 	switch (networkCode) {
@@ -33,6 +39,12 @@ const explorerLink = (networkCode, net, prefix) => {
 	case KOVAN_CODE: // kovan testnet
 	case GOERLI_CODE: // Goerli testnet
 		return etherscanLink(prefix)
+	case CELO_CODE: // CELO
+		return celoExplorerLink
+	case CELO_ALFAJORES_TESTNET_CODE: // CELO ALFAJORES TESTNET
+		return celoAlfajoresTestnetExplorerLink
+	case CELO_BAKLAVA_TESTNET_CODE: // CELO BAKLAVA TESTNET
+		return celoBaklavaTestnetExplorerLink
 	default:
 		return blockScoutLink(net, prefix)
 	}
@@ -42,6 +54,10 @@ const tokenLink = (networkCode, chain, prefix, tokenAddress, holderAddress) => {
 	const blockscoutLinkStr = `${blockScoutLink(chain, prefix)}/address/${holderAddress}/tokens/${tokenAddress}/token-transfers`
 	const etherscanLinkStr = `${etherscanLink(prefix)}/token/${tokenAddress}?a=${holderAddress}`
 	const rskTestnetExplorerLinkStr = `${rskTestnetExplorerLink}/address/${tokenAddress}`
+	const celoExplorerLinkStr = `${celoExplorerLink}/address/${holderAddress}/tokens/${tokenAddress}/token_transfers`
+	const celoAlfajoresTestnetExplorerLinkStr = `${celoAlfajoresTestnetExplorerLink}/address/${holderAddress}/tokens/${tokenAddress}/token_transfers`
+	const celoBaklavaTestnetExplorerLinkStr = `${celoBaklavaTestnetExplorerLink}/address/${holderAddress}/tokens/${tokenAddress}/token_transfers`
+
 	switch (networkCode) {
 	case SOKOL_CODE: // POA Sokol testnet
 	case POA_CORE_CODE: // POA Core
@@ -57,6 +73,12 @@ const tokenLink = (networkCode, chain, prefix, tokenAddress, holderAddress) => {
 	case KOVAN_CODE: // kovan testnet
 	case GOERLI_CODE: // Goerli testnet
 		return etherscanLinkStr
+	case CELO_CODE: // CELO
+		return celoExplorerLinkStr
+	case CELO_ALFAJORES_TESTNET_CODE: // CELO Alfajores testnet
+		return celoAlfajoresTestnetExplorerLinkStr
+	case CELO_BAKLAVA_TESTNET_CODE: // CELO Baklava testnet
+		return celoBaklavaTestnetExplorerLinkStr
 	default:
 		return blockscoutLinkStr
 	}
@@ -101,6 +123,15 @@ function getExplorerChain (networkCode) {
 		break
 	case RSK_CODE: // RSK mainnet
 		chain = 'rsk'
+		break
+	case CELO_CODE: // CELO
+		chain = 'celo'
+		break
+	case CELO_ALFAJORES_TESTNET_CODE: // CELO Alfajores testnet
+		chain = 'celo-alfajores'
+		break
+	case CELO_BAKLAVA_TESTNET_CODE: // CELO Baklava testnet
+		chain = 'celo-baklava'
 		break
 	default:
 		chain = ''
