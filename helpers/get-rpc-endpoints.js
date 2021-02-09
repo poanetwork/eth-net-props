@@ -11,6 +11,9 @@ const {
 	RSK_CODE,
 	RSK_TESTNET_CODE,
 	CLASSIC_CODE,
+	CELO_CODE,
+	CELO_ALFAJORES_TESTNET_CODE,
+	CELO_BAKLAVA_TESTNET_CODE,
 } = networkIDs
 
 function getRPCEndpoints(network) {
@@ -38,6 +41,12 @@ function getRPCEndpoints(network) {
 		return ['https://public-node.testnet.rsk.co']
 	case CLASSIC_CODE:
 		return ['https://www.ethercluster.com/etc']
+	case CELO_CODE:
+		return ['https://forno.celo.org']
+	case CELO_ALFAJORES_TESTNET_CODE:
+		return ['https://alfajores-forno.celo-testnet.org']
+	case CELO_BAKLAVA_TESTNET_CODE:
+		return ['https://baklava-forno.celo-testnet.org']
 	default:
 		return []
 	}

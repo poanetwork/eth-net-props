@@ -47,6 +47,15 @@ describe('eth-net-props', () => {
 			it(`${claimPrefix} Ethereum Classic`, () => {
 				assert.equal(explorerLinks.getExplorerAccountLinkFor('0xd8fe15886d2dcbc5d7c06394beb417aadaf1eee0', '61'), 'https://blockscout.com/etc/mainnet/address/0xd8fe15886d2dcbc5d7c06394beb417aadaf1eee0')
 			})
+			it(`${claimPrefix} CELO`, () => {
+				assert.equal(explorerLinks.getExplorerAccountLinkFor('0xff2c76ec831bc5c09c491d31abac7821a5ab6c26', 42220), 'https://explorer.celo.org/address/0xff2c76ec831bc5c09c491d31abac7821a5ab6c26')
+			})
+			it(`${claimPrefix} CELO Alfajores testnet`, () => {
+				assert.equal(explorerLinks.getExplorerAccountLinkFor('0x840b32f30e1a3b2e8b9e6c0972eba0148e22b847', 44787), 'https://alfajores-blockscout.celo-testnet.org/address/0x840b32f30e1a3b2e8b9e6c0972eba0148e22b847')
+			})
+			it(`${claimPrefix} CELO Baklava testnet`, () => {
+				assert.equal(explorerLinks.getExplorerAccountLinkFor('0xe90f891710f625f18ecbf1e02efb4fd1ab236a10', 62320), 'https://baklava-blockscout.celo-testnet.org/address/0xe90f891710f625f18ecbf1e02efb4fd1ab236a10')
+			})
 		})
 
 		describe ('getExplorerTxLinkFor()', () => {
@@ -83,6 +92,15 @@ describe('eth-net-props', () => {
 			it(`${claimPrefix} Ethereum Classic`, () => {
 				assert.equal(explorerLinks.getExplorerTxLinkFor('0x430c90335b32fdcd92e54991668023d58b72bce836e204a81c6d97506c7137e5', 61), 'https://blockscout.com/etc/mainnet/tx/0x430c90335b32fdcd92e54991668023d58b72bce836e204a81c6d97506c7137e5')
 			})
+			it(`${claimPrefix} CELO`, () => {
+				assert.equal(explorerLinks.getExplorerTxLinkFor('0xadc9df6f6ca93a2ff328b1d700acb250200485b11249dfd4a94762a0b6ce5927', 42220), 'https://explorer.celo.org/tx/0xadc9df6f6ca93a2ff328b1d700acb250200485b11249dfd4a94762a0b6ce5927')
+			})
+			it(`${claimPrefix} CELO Alfajores testnet`, () => {
+				assert.equal(explorerLinks.getExplorerTxLinkFor('0x6f654d0ba6231778f3f3a0fc3c4c97a89040aa9c279c21253a1fc6a70f15c091', 44787), 'https://alfajores-blockscout.celo-testnet.org/tx/0x6f654d0ba6231778f3f3a0fc3c4c97a89040aa9c279c21253a1fc6a70f15c091')
+			})
+			it(`${claimPrefix} CELO Bklava testnnet`, () => {
+				assert.equal(explorerLinks.getExplorerTxLinkFor('0xf339b8687970623b532aca1cf76d02ffa0a82792a2de1fa0c1c89866efff2950', 62320), 'https://baklava-blockscout.celo-testnet.org/tx/0xf339b8687970623b532aca1cf76d02ffa0a82792a2de1fa0c1c89866efff2950')
+			})
 		})
 
 		describe ('getExplorerTokenLinkFor()', () => {
@@ -118,6 +136,15 @@ describe('eth-net-props', () => {
 			})
 			it(`${claimPrefix} Ethereum Classic`, () => {
 				assert.equal(explorerLinks.getExplorerTokenLinkFor('0x1ac1c8b874c7b889113a036ba443b082554be5d0', '0xdb23145b64D0E1e15dedf47abd77cCaf3F2327d7', 61), 'https://blockscout.com/etc/mainnet/address/0xdb23145b64D0E1e15dedf47abd77cCaf3F2327d7/tokens/0x1ac1c8b874c7b889113a036ba443b082554be5d0/token-transfers')
+			})
+			it(`${claimPrefix} Celo`, () => {
+				assert.equal(explorerLinks.getExplorerTokenLinkFor('0x765de816845861e75a25fca122bb6898b8b1282a', '0x63b4b616c5345e3DcC9e21dB69297e2129447f4e', 42220), 'https://explorer.celo.org/address/0x63b4b616c5345e3DcC9e21dB69297e2129447f4e/tokens/0x765de816845861e75a25fca122bb6898b8b1282a/token_transfers')
+			})
+			it(`${claimPrefix} Celo Alfajores testnet`, () => {
+				assert.equal(explorerLinks.getExplorerTokenLinkFor('0x874069fa1eb16d44d622f2e0ca25eea172369bc1', '0x6131a6D616A4be3737B38988847270a64bC10CAa', 44787), 'https://alfajores-blockscout.celo-testnet.org/address/0x6131a6D616A4be3737B38988847270a64bC10CAa/tokens/0x874069fa1eb16d44d622f2e0ca25eea172369bc1/token_transfers')
+			})
+			it(`${claimPrefix} Celo Baklava testnet`, () => {
+				assert.equal(explorerLinks.getExplorerTokenLinkFor('0xddc9be57f553fe75752d61606b94cbd7e0264ef8', '0x68Dd816611d3DE196FDeb87438B74A9c29fd649f', 62320), 'https://baklava-blockscout.celo-testnet.org/address/0x68Dd816611d3DE196FDeb87438B74A9c29fd649f/tokens/0xddc9be57f553fe75752d61606b94cbd7e0264ef8/token_transfers')
 			})
 		})
 	})
@@ -172,6 +199,7 @@ describe('eth-net-props', () => {
 			assert.equal(faucetLinks.getFaucetLinks(99).length, 0)
 			assert.equal(faucetLinks.getFaucetLinks(100).length, 0)
 			assert.equal(faucetLinks.getFaucetLinks(30).length, 0)
+			assert.equal(faucetLinks.getFaucetLinks(62320).length, 0)
 		})
 	})
 
@@ -254,6 +282,27 @@ describe('eth-net-props', () => {
 				assert.equal(ETCRPCEndpoints[0], 'https://www.ethercluster.com/etc')
 			}
 		})
+		it(`${claimPrefix} CELO`, () => {
+			const ETCRPCEndpoints = RPCEndpoints.getRPCEndpoints(42220)
+			assert.equal(ETCRPCEndpoints.length, 1)
+			if (ETCRPCEndpoints.length > 0) {
+				assert.equal(ETCRPCEndpoints[0], 'https://forno.celo.org')
+			}
+		})
+		it(`${claimPrefix} CELO Alfajores testnet`, () => {
+			const ETCRPCEndpoints = RPCEndpoints.getRPCEndpoints(44787)
+			assert.equal(ETCRPCEndpoints.length, 1)
+			if (ETCRPCEndpoints.length > 0) {
+				assert.equal(ETCRPCEndpoints[0], 'https://alfajores-forno.celo-testnet.org')
+			}
+		})
+		it(`${claimPrefix} CELO Baklava testnet`, () => {
+			const ETCRPCEndpoints = RPCEndpoints.getRPCEndpoints(62320)
+			assert.equal(ETCRPCEndpoints.length, 1)
+			if (ETCRPCEndpoints.length > 0) {
+				assert.equal(ETCRPCEndpoints[0], 'https://baklava-forno.celo-testnet.org')
+			}
+		})
 	})
 
 	claimPrefix = 'should return correct display name for'
@@ -294,6 +343,15 @@ describe('eth-net-props', () => {
 		it(`${claimPrefix} Sokol Testnet`, () => {
 			assert.equal(netProps.getNetworkDisplayName('77'), 'Sokol Testnet')
 		})
+		it(`${claimPrefix} Celo`, () => {
+			assert.equal(netProps.getNetworkDisplayName(42220), 'CELO')
+		})
+		it(`${claimPrefix} Celo Alfajores testnet`, () => {
+			assert.equal(netProps.getNetworkDisplayName(44787), 'CELO Alfajores')
+		})
+		it(`${claimPrefix} Celo Baklava testnet`, () => {
+			assert.equal(netProps.getNetworkDisplayName(62320), 'CELO Baklava')
+		})
 
 		claimPrefix = 'should return correct coin name for'
 		it(`${claimPrefix} Sokol Testnet`, () => {
@@ -329,6 +387,15 @@ describe('eth-net-props', () => {
 		it(`${claimPrefix} Ethereum Classic`, () => {
 			assert.equal(netProps.getNetworkCoinName(61), 'ETC')
 		})
+		it(`${claimPrefix} CELO`, () => {
+			assert.equal(netProps.getNetworkCoinName(42220), 'CELO')
+		})
+		it(`${claimPrefix} CELO Alfajores testnet`, () => {
+			assert.equal(netProps.getNetworkCoinName(44787), 'CELO')
+		})
+		it(`${claimPrefix} CELO Baklava testnet`, () => {
+			assert.equal(netProps.getNetworkCoinName(62320), 'CELO')
+		})
 
 		it('Sokol is a testnet', () => {
 			assert.equal(netProps.isTestnet(77), true)
@@ -362,6 +429,15 @@ describe('eth-net-props', () => {
 		})
 		it('Ethereum Classic is a mainnet', () => {
 			assert.equal(netProps.isTestnet(61), false)
+		})
+		it('CELO is a mainnet', () => {
+			assert.equal(netProps.isTestnet(42220), false)
+		})
+		it('CELO Alfajores is a testnet', () => {
+			assert.equal(netProps.isTestnet(44787), true)
+		})
+		it('CELO Baklava is a testnet', () => {
+			assert.equal(netProps.isTestnet(62320), true)
 		})
 	})
 })

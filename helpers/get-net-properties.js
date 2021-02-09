@@ -11,6 +11,9 @@ const {
 	RSK_CODE,
 	RSK_TESTNET_CODE,
 	CLASSIC_CODE,
+	CELO_CODE,
+	CELO_ALFAJORES_TESTNET_CODE,
+	CELO_BAKLAVA_TESTNET_CODE,
 } = networkIDs
 
 function getNetworkDisplayName(network) {
@@ -38,6 +41,12 @@ function getNetworkDisplayName(network) {
 		return 'RSK Testnet'
 	case CLASSIC_CODE:
 		return 'Ethereum Classic'
+	case CELO_CODE:
+		return 'CELO'
+	case CELO_ALFAJORES_TESTNET_CODE:
+		return 'CELO Alfajores'
+	case CELO_BAKLAVA_TESTNET_CODE:
+		return 'CELO Baklava'
 	default:
 		return 'Unknown Private Network'
 	}
@@ -58,6 +67,10 @@ function getNetworkCoinName(network) {
 		return 'GöETH'
 	case CLASSIC_CODE:
 		return 'ETC'
+	case CELO_CODE:
+	case CELO_ALFAJORES_TESTNET_CODE:
+	case CELO_BAKLAVA_TESTNET_CODE:
+		return 'CELO'
 	default:
 		return 'ETH'
 	}
@@ -71,6 +84,7 @@ function isTestnet(network) {
 	case XDAI_CODE:
 	case RSK_CODE:
 	case CLASSIC_CODE:
+	case CELO_CODE:
 		return false
 	default:
 		return true
