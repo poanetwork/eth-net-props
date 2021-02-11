@@ -6,6 +6,7 @@ const {
 	KOVAN_CODE,
 	SOKOL_CODE,
 	RSK_TESTNET_CODE,
+	CELO_ALFAJORES_TESTNET_CODE,
 } = networkIDs
 
 function getFaucetLinks(network) {
@@ -23,6 +24,8 @@ function getFaucetLinks(network) {
 		return ['https://faucet.poa.network/']
 	case RSK_TESTNET_CODE:
 		return ['https://faucet.rsk.co/']
+	case CELO_ALFAJORES_TESTNET_CODE:
+		return ['https://celo.org/developers/faucet']
 	default:
 		return []
 	}

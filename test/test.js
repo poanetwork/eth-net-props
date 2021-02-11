@@ -194,6 +194,13 @@ describe('eth-net-props', () => {
 				assert.equal(goerliFaucetLinks[0], 'https://goerli-faucet.slock.it/')
 			}
 		})
+		it(`${claimPrefix} CELO Alfajores`, () => {
+			const celoAlfajoresFaucetLinks = faucetLinks.getFaucetLinks(44787)
+			assert.equal(celoAlfajoresFaucetLinks.length, 1)
+			if (celoAlfajoresFaucetLinks.length > 0) {
+				assert.equal(celoAlfajoresFaucetLinks[0], 'https://celo.org/developers/faucet')
+			}
+		})
 		it('should not return faucet link for production blockchains', () => {
 			assert.equal(faucetLinks.getFaucetLinks(1).length, 0)
 			assert.equal(faucetLinks.getFaucetLinks(99).length, 0)
