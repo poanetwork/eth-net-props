@@ -18,7 +18,7 @@ describe('eth-net-props', () => {
 				assert.equal(explorerLinks.getExplorerAccountLinkFor('0x15c40c6de9f2299680a4522d8635c9b394eded09', 99), 'https://blockscout.com/poa/core/address/0x15c40c6de9f2299680a4522d8635c9b394eded09')
 			})
 			it(`${claimPrefix} xDai`, () => {
-				assert.equal(explorerLinks.getExplorerAccountLinkFor('0x15c40c6de9f2299680a4522d8635c9b394eded09', 100), 'https://blockscout.com/poa/xdai/address/0x15c40c6de9f2299680a4522d8635c9b394eded09')
+				assert.equal(explorerLinks.getExplorerAccountLinkFor('0x15c40c6de9f2299680a4522d8635c9b394eded09', 100), 'https://blockscout.com/xdai/mainnet/address/0x15c40c6de9f2299680a4522d8635c9b394eded09')
 			})
 			it(`${claimPrefix} Ethereum`, () => {
 				assert.equal(explorerLinks.getExplorerAccountLinkFor('0x70FDd102DDB03Dc55B1719E76DfeA784916621fd', 1), 'https://etherscan.io/address/0x70FDd102DDB03Dc55B1719E76DfeA784916621fd')
@@ -47,6 +47,15 @@ describe('eth-net-props', () => {
 			it(`${claimPrefix} Ethereum Classic`, () => {
 				assert.equal(explorerLinks.getExplorerAccountLinkFor('0xd8fe15886d2dcbc5d7c06394beb417aadaf1eee0', '61'), 'https://blockscout.com/etc/mainnet/address/0xd8fe15886d2dcbc5d7c06394beb417aadaf1eee0')
 			})
+			it(`${claimPrefix} Optimism Goerli`, () => {
+				assert.equal(explorerLinks.getExplorerAccountLinkFor('0xd8fe15886d2dcbc5d7c06394beb417aadaf1eee0', 300), 'https://blockscout.com/xdai/optimism/address/0xd8fe15886d2dcbc5d7c06394beb417aadaf1eee0')
+			})
+			it(`${claimPrefix} Optimism Goerli`, () => {
+				assert.equal(explorerLinks.getExplorerAccountLinkFor('0xd8fe15886d2dcbc5d7c06394beb417aadaf1eee0', 420), 'https://blockscout.com/optimism/goerli/address/0xd8fe15886d2dcbc5d7c06394beb417aadaf1eee0')
+			})
+			it(`${claimPrefix} Astar`, () => {
+				assert.equal(explorerLinks.getExplorerAccountLinkFor('0xd8fe15886d2dcbc5d7c06394beb417aadaf1eee0', 592), 'https://blockscout.com/astar/address/0xd8fe15886d2dcbc5d7c06394beb417aadaf1eee0')
+			})
 			it(`${claimPrefix} CELO`, () => {
 				assert.equal(explorerLinks.getExplorerAccountLinkFor('0xff2c76ec831bc5c09c491d31abac7821a5ab6c26', 42220), 'https://explorer.celo.org/address/0xff2c76ec831bc5c09c491d31abac7821a5ab6c26')
 			})
@@ -66,7 +75,7 @@ describe('eth-net-props', () => {
 				assert.equal(explorerLinks.getExplorerTxLinkFor('0xb3b01bcc1a73477cd86de989cc207fa59f87ea601dea298772f4b1b3f6f1407e', 99), 'https://blockscout.com/poa/core/tx/0xb3b01bcc1a73477cd86de989cc207fa59f87ea601dea298772f4b1b3f6f1407e')
 			})
 			it(`${claimPrefix} xDai`, () => {
-				assert.equal(explorerLinks.getExplorerTxLinkFor('0xb3b01bcc1a73477cd86de989cc207fa59f87ea601dea298772f4b1b3f6f1407e', 100), 'https://blockscout.com/poa/xdai/tx/0xb3b01bcc1a73477cd86de989cc207fa59f87ea601dea298772f4b1b3f6f1407e')
+				assert.equal(explorerLinks.getExplorerTxLinkFor('0xb3b01bcc1a73477cd86de989cc207fa59f87ea601dea298772f4b1b3f6f1407e', 100), 'https://blockscout.com/xdai/mainnet/tx/0xb3b01bcc1a73477cd86de989cc207fa59f87ea601dea298772f4b1b3f6f1407e')
 			})
 			it(`${claimPrefix} Ethereum`, () => {
 				assert.equal(explorerLinks.getExplorerTxLinkFor('0x892c825d1ec25b0a1a27aa5dff5b54fc4488a45029d0087fc40d3d733ded7305', 1), 'https://etherscan.io/tx/0x892c825d1ec25b0a1a27aa5dff5b54fc4488a45029d0087fc40d3d733ded7305')
@@ -101,6 +110,9 @@ describe('eth-net-props', () => {
 			it(`${claimPrefix} CELO Bklava testnnet`, () => {
 				assert.equal(explorerLinks.getExplorerTxLinkFor('0xf339b8687970623b532aca1cf76d02ffa0a82792a2de1fa0c1c89866efff2950', 62320), 'https://baklava-blockscout.celo-testnet.org/tx/0xf339b8687970623b532aca1cf76d02ffa0a82792a2de1fa0c1c89866efff2950')
 			})
+			it(`${claimPrefix} Shiden`, () => {
+				assert.equal(explorerLinks.getExplorerTxLinkFor('0xe02a0bee75eb5754fb561d7965ae387213660ff1e344b6d6371b4724acf58ba0', 336), 'https://blockscout.com/shiden/tx/0xe02a0bee75eb5754fb561d7965ae387213660ff1e344b6d6371b4724acf58ba0')
+			})
 		})
 
 		describe ('getExplorerTokenLinkFor()', () => {
@@ -111,7 +123,7 @@ describe('eth-net-props', () => {
 				assert.equal(explorerLinks.getExplorerTokenLinkFor('0xAb2f2Dd3120dE530d38936EE09A74a6d17e3Da44', '0x4C4b0F3fb93A33d58b07117ae079775496CF9c17', 99), 'https://blockscout.com/poa/core/address/0x4C4b0F3fb93A33d58b07117ae079775496CF9c17/tokens/0xAb2f2Dd3120dE530d38936EE09A74a6d17e3Da44/token-transfers')
 			})
 			it(`${claimPrefix} xDai`, () => {
-				assert.equal(explorerLinks.getExplorerTokenLinkFor('0xABE71e6a260C2eEa3C30864Dc50639100Aa315f6', '0xEca0f4Bd861713aF4f248CED18C15AF76440b00a', 100), 'https://blockscout.com/poa/xdai/address/0xEca0f4Bd861713aF4f248CED18C15AF76440b00a/tokens/0xABE71e6a260C2eEa3C30864Dc50639100Aa315f6/token-transfers')
+				assert.equal(explorerLinks.getExplorerTokenLinkFor('0xABE71e6a260C2eEa3C30864Dc50639100Aa315f6', '0xEca0f4Bd861713aF4f248CED18C15AF76440b00a', 100), 'https://blockscout.com/xdai/mainnet/address/0xEca0f4Bd861713aF4f248CED18C15AF76440b00a/tokens/0xABE71e6a260C2eEa3C30864Dc50639100Aa315f6/token-transfers')
 			})
 			it(`${claimPrefix} Ethereum`, () => {
 				assert.equal(explorerLinks.getExplorerTokenLinkFor('0x5a386eb0fcbfee3f0d759e263053c09162ff102d', '0x2C343e73A594DfD1808b930372A610071bAa9d0E', 1), 'https://etherscan.io/token/0x5a386eb0fcbfee3f0d759e263053c09162ff102d?a=0x2C343e73A594DfD1808b930372A610071bAa9d0E')
@@ -136,6 +148,9 @@ describe('eth-net-props', () => {
 			})
 			it(`${claimPrefix} Ethereum Classic`, () => {
 				assert.equal(explorerLinks.getExplorerTokenLinkFor('0x1ac1c8b874c7b889113a036ba443b082554be5d0', '0xdb23145b64D0E1e15dedf47abd77cCaf3F2327d7', 61), 'https://blockscout.com/etc/mainnet/address/0xdb23145b64D0E1e15dedf47abd77cCaf3F2327d7/tokens/0x1ac1c8b874c7b889113a036ba443b082554be5d0/token-transfers')
+			})
+			it(`${claimPrefix} Shibuya`, () => {
+				assert.equal(explorerLinks.getExplorerTokenLinkFor('0xa4C17AD6bEC86e1233499A9B174D1E2D466c7198', '0xce51D1fa776C2941d4155E8FfCc585c5a1213d50', 81), 'https://blockscout.com/shibuya/address/0xce51D1fa776C2941d4155E8FfCc585c5a1213d50/tokens/0xa4C17AD6bEC86e1233499A9B174D1E2D466c7198/token-transfers')
 			})
 			it(`${claimPrefix} Celo`, () => {
 				assert.equal(explorerLinks.getExplorerTokenLinkFor('0x765de816845861e75a25fca122bb6898b8b1282a', '0x63b4b616c5345e3DcC9e21dB69297e2129447f4e', 42220), 'https://explorer.celo.org/address/0x63b4b616c5345e3DcC9e21dB69297e2129447f4e/tokens/0x765de816845861e75a25fca122bb6898b8b1282a/token_transfers')
@@ -258,7 +273,7 @@ describe('eth-net-props', () => {
 			const xDaiRPCEndpoints = RPCEndpoints.getRPCEndpoints(100)
 			assert.equal(xDaiRPCEndpoints.length, 1)
 			if (xDaiRPCEndpoints.length > 0) {
-				assert.equal(xDaiRPCEndpoints[0], 'https://xdai.poanetwork.dev/')
+				assert.equal(xDaiRPCEndpoints[0], 'https://rpc.gnosischain.com')
 			}
 		})
 		it(`${claimPrefix} RSK`, () => {
@@ -321,7 +336,7 @@ describe('eth-net-props', () => {
 			assert.equal(netProps.getNetworkDisplayName(99), 'POA')
 		})
 		it(`${claimPrefix} xDAI`, () => {
-			assert.equal(netProps.getNetworkDisplayName(100), 'xDai')
+			assert.equal(netProps.getNetworkDisplayName(100), 'Gnosis Chain')
 		})
 		it(`${claimPrefix} Ethereum`, () => {
 			assert.equal(netProps.getNetworkDisplayName(1), 'Ethereum')
